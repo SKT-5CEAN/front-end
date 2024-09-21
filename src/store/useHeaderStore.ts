@@ -1,6 +1,11 @@
 import { create } from "zustand";
 
-type HeaderMenu = "캘린더" | "지원 준비" | "보관함" | "회고 / 복기" | "통계";
+export type HeaderMenu =
+  | "캘린더"
+  | "지원 준비"
+  | "보관함"
+  | "회고 / 복기"
+  | "통계";
 
 interface HeaderStoreType {
   selectedMenu: HeaderMenu;
