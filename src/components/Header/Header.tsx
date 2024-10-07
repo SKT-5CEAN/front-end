@@ -22,8 +22,8 @@ function Header() {
   ];
 
   return (
-    <header className="flex justify-between w-auto h-36 items-center px-16">
-      <Image src={logo} alt="취얼업 로고" className="w-[122px] h-[48px]" />
+    <header className="fixed top-0 left-0 w-full h-24 flex justify-between items-center px-16 bg-white z-50">
+      <Image src={logo} alt="취얼업 로고" className="w-[122px] h-[36px]" />
       <ul className="flex space-x-28">
         {menuItems.map((menu) => (
           <li
@@ -37,7 +37,7 @@ function Header() {
           </li>
         ))}
       </ul>
-      <Image src={my} alt="마이페이지 로고" className="w-[56px] h-[56px]" />
+      <Image src={my} alt="마이페이지 로고" className="w-[40px] h-[40px]" />
     </header>
   );
 }
