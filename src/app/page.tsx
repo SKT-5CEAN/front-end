@@ -4,8 +4,6 @@ import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from 
 import Header from "@/components/Header/Header";
 import FeatureSection1 from "@/components/sections/FeatureSection1";
 import IntroSection from "@/components/sections/IntroSection";
-import ReviewSection from "@/components/sections/ReviewSection";
-import Image from "next/image";
 import FeatureSection2 from '@/components/sections/FeatureSection2';
 
 export default function Home() {
@@ -23,10 +21,6 @@ export default function Home() {
           <FullpageSection>
             <FeatureSection2 />
           </FullpageSection>
-
-          {/* <FullpageSection>
-            <ReviewSection />
-          </FullpageSection> */}
         </FullPageSections>
         <FullpageNavigation />
       </Fullpage>
