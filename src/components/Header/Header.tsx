@@ -1,7 +1,7 @@
 "use client";
 import { HeaderMenu, useHeaderStore } from "@/store/useHeaderStore";
 import Image from "next/image";
-import logo from "../../../public/ic-logo.png";
+import logo from "../../../public/logo1.png";
 import my from "../../../public/ic-my.png";
 
 function Header() {
@@ -22,14 +22,14 @@ function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full h-24 flex justify-between items-center px-16 bg-white z-50">
-      <Image src={logo} alt="취얼업 로고" className="w-[122px] h-[36px]" />
+    <header className="fixed top-0 left-0 w-full h-[60px] flex justify-between items-center px-16 bg-white z-50">
+      <Image src={logo} alt="취얼업 로고" className="w-[83.25px] h-[45px]" />
       <ul className="flex space-x-28">
         {menuItems.map((menu) => (
           <li
             key={menu}
             onClick={handleClick}
-            className={`cursor-pointer text-2xl ${
+            className={`cursor-pointer text-xl ${
               selectedMenu === menu ? "text-yellow" : "text-gray-500"
             }`}
           >
@@ -37,7 +37,9 @@ function Header() {
           </li>
         ))}
       </ul>
-      <Image src={my} alt="마이페이지 로고" className="w-[40px] h-[40px]" />
+      <div>
+        <button className="border-[2px] border-[#FFE74C] text-[#F5A524] font-bold py-2 px-4 rounded-[8px]">로그인 / 회원가입</button>
+      </div>
     </header>
   );
 }
