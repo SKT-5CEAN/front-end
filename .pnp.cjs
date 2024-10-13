@@ -27,7 +27,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@ap.cx/react-fullpage", "virtual:03edfd469f7a323f3baf95f8884591075d27a189547221fdb43a01d083bffdcf2e6c91a428c8318b160f4e1ef44eaabc94de4e5081ad3631976d6a4b169d202b#npm:0.3.0"],\
+          ["@fullpage/react-fullpage", "npm:0.1.44"],\
           ["@types/node", "npm:20.16.5"],\
           ["@types/react", "npm:18.3.5"],\
           ["@types/react-dom", "npm:18.3.0"],\
@@ -54,31 +54,13 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@ap.cx/react-fullpage", [\
-      ["npm:0.3.0", {\
-        "packageLocation": "../../../../.yarn/berry/cache/@ap.cx-react-fullpage-npm-0.3.0-a96ca58f65-10c0.zip/node_modules/@ap.cx/react-fullpage/",\
+    ["@babel/polyfill", [\
+      ["npm:7.12.1", {\
+        "packageLocation": "../../../../.yarn/berry/cache/@babel-polyfill-npm-7.12.1-a393b8d870-10c0.zip/node_modules/@babel/polyfill/",\
         "packageDependencies": [\
-          ["@ap.cx/react-fullpage", "npm:0.3.0"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:03edfd469f7a323f3baf95f8884591075d27a189547221fdb43a01d083bffdcf2e6c91a428c8318b160f4e1ef44eaabc94de4e5081ad3631976d6a4b169d202b#npm:0.3.0", {\
-        "packageLocation": "./.yarn/__virtual__/@ap.cx-react-fullpage-virtual-34533f398b/5/.yarn/berry/cache/@ap.cx-react-fullpage-npm-0.3.0-a96ca58f65-10c0.zip/node_modules/@ap.cx/react-fullpage/",\
-        "packageDependencies": [\
-          ["@ap.cx/react-fullpage", "virtual:03edfd469f7a323f3baf95f8884591075d27a189547221fdb43a01d083bffdcf2e6c91a428c8318b160f4e1ef44eaabc94de4e5081ad3631976d6a4b169d202b#npm:0.3.0"],\
-          ["@types/prop-types", null],\
-          ["@types/react", "npm:18.3.5"],\
-          ["@types/react-dom", "npm:18.3.0"],\
-          ["prop-types", "npm:15.8.1"],\
-          ["react", "npm:18.3.1"],\
-          ["react-dom", "virtual:03edfd469f7a323f3baf95f8884591075d27a189547221fdb43a01d083bffdcf2e6c91a428c8318b160f4e1ef44eaabc94de4e5081ad3631976d6a4b169d202b#npm:18.3.1"]\
-        ],\
-        "packagePeers": [\
-          "@types/prop-types",\
-          "@types/react-dom",\
-          "@types/react",\
-          "react-dom",\
-          "react"\
+          ["@babel/polyfill", "npm:7.12.1"],\
+          ["core-js", "npm:2.6.12"],\
+          ["regenerator-runtime", "npm:0.13.11"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -159,6 +141,17 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../.yarn/berry/cache/@eslint-object-schema-npm-2.1.4-0546250476-10c0.zip/node_modules/@eslint/object-schema/",\
         "packageDependencies": [\
           ["@eslint/object-schema", "npm:2.1.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@fullpage/react-fullpage", [\
+      ["npm:0.1.44", {\
+        "packageLocation": "../../../../.yarn/berry/cache/@fullpage-react-fullpage-npm-0.1.44-964528ea42-10c0.zip/node_modules/@fullpage/react-fullpage/",\
+        "packageDependencies": [\
+          ["@fullpage/react-fullpage", "npm:0.1.44"],\
+          ["@babel/polyfill", "npm:7.12.1"],\
+          ["fullpage.js", "npm:4.0.29"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1271,6 +1264,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["core-js", [\
+      ["npm:2.6.12", {\
+        "packageLocation": "./.yarn/unplugged/core-js-npm-2.6.12-0b93d77d31/node_modules/core-js/",\
+        "packageDependencies": [\
+          ["core-js", "npm:2.6.12"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["cross-spawn", [\
       ["npm:7.0.3", {\
         "packageLocation": "../../../../.yarn/berry/cache/cross-spawn-npm-7.0.3-e4ff3e65b3-10c0.zip/node_modules/cross-spawn/",\
@@ -2289,7 +2291,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["front-end", "workspace:."],\
-          ["@ap.cx/react-fullpage", "virtual:03edfd469f7a323f3baf95f8884591075d27a189547221fdb43a01d083bffdcf2e6c91a428c8318b160f4e1ef44eaabc94de4e5081ad3631976d6a4b169d202b#npm:0.3.0"],\
+          ["@fullpage/react-fullpage", "npm:0.1.44"],\
           ["@types/node", "npm:20.16.5"],\
           ["@types/react", "npm:18.3.5"],\
           ["@types/react-dom", "npm:18.3.0"],\
@@ -2331,6 +2333,15 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"],\
           ["node-gyp", "npm:10.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["fullpage.js", [\
+      ["npm:4.0.29", {\
+        "packageLocation": "../../../../.yarn/berry/cache/fullpage.js-npm-4.0.29-53ce37cfc6-10c0.zip/node_modules/fullpage.js/",\
+        "packageDependencies": [\
+          ["fullpage.js", "npm:4.0.29"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4094,6 +4105,15 @@ const RAW_RUNTIME_STATE =
           ["get-intrinsic", "npm:1.2.4"],\
           ["globalthis", "npm:1.0.4"],\
           ["which-builtin-type", "npm:1.1.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["regenerator-runtime", [\
+      ["npm:0.13.11", {\
+        "packageLocation": "../../../../.yarn/berry/cache/regenerator-runtime-npm-0.13.11-90bf536060-10c0.zip/node_modules/regenerator-runtime/",\
+        "packageDependencies": [\
+          ["regenerator-runtime", "npm:0.13.11"]\
         ],\
         "linkType": "HARD"\
       }]\
