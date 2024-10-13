@@ -24,6 +24,7 @@ export default function Home() {
           return (
             <div id="fullpage-wrapper">
               <div className="section h-screen flex justify-center items-center">
+                <IntroSection />
               </div>
               <div className="section h-screen flex justify-center items-center">
                 <FeatureSection1 />
