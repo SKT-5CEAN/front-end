@@ -12,18 +12,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ap.cx/react-fullpage@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@ap.cx/react-fullpage@npm:0.3.0"
+"@babel/polyfill@npm:^7.2.5":
+  version: 7.12.1
+  resolution: "@babel/polyfill@npm:7.12.1"
   dependencies:
-    prop-types: "npm:^15.5.4"
-    react: "npm:^16.6.0"
-    react-dom: "npm:^16.6.0"
-  peerDependencies:
-    prop-types: ^15.5.4
-    react: ^16.6.0
-    react-dom: ^16.6.0
-  checksum: 10c0/dfce932fbc2eacd1f8e85f2ba34600e813d2bd72c668c62afd263a2b258a6c7fa2671cd33abfa54f73c24796c1cc0d96b5197069038d9d7dbf6462f0f7849a10
+    core-js: "npm:^2.6.5"
+    regenerator-runtime: "npm:^0.13.4"
+  checksum: 10c0/f5d233d2958582e8678838c32c42ba780965119ebb3771d9b9735f85efabc7b8b49161e7d908477486e0aaf8508410e957be764c27a6a828714fb9d1b7f80bc3
   languageName: node
   linkType: hard
 
@@ -84,6 +79,16 @@ __metadata:
   version: 2.1.4
   resolution: "@eslint/object-schema@npm:2.1.4"
   checksum: 10c0/e9885532ea70e483fb007bf1275968b05bb15ebaa506d98560c41a41220d33d342e19023d5f2939fed6eb59676c1bda5c847c284b4b55fce521d282004da4dda
+  languageName: node
+  linkType: hard
+
+"@fullpage/react-fullpage@npm:^0.1.44":
+  version: 0.1.44
+  resolution: "@fullpage/react-fullpage@npm:0.1.44"
+  dependencies:
+    "@babel/polyfill": "npm:^7.2.5"
+    fullpage.js: "npm:^4.0.29"
+  checksum: 10c0/5631a26f6de6a005a9ef436d84e45cead43f902f417ceda0dc207e4b0e5b069216095ce834b6e6917b9d9b65bc0546af851e6273df805f8401e3410e38907d70
   languageName: node
   linkType: hard
 
@@ -962,6 +967,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^2.6.5":
+  version: 2.6.12
+  resolution: "core-js@npm:2.6.12"
+  checksum: 10c0/00128efe427789120a06b819adc94cc72b96955acb331cb71d09287baf9bd37bebd191d91f1ee4939c893a050307ead4faea08876f09115112612b6a05684b63
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -1744,7 +1756,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "front-end@workspace:."
   dependencies:
-    "@ap.cx/react-fullpage": "npm:^0.3.0"
+    "@fullpage/react-fullpage": "npm:^0.1.44"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
@@ -1795,6 +1807,13 @@ __metadata:
   dependencies:
     node-gyp: "npm:latest"
   conditions: os=darwin
+  languageName: node
+  linkType: hard
+
+"fullpage.js@npm:^4.0.29":
+  version: 4.0.29
+  resolution: "fullpage.js@npm:4.0.29"
+  checksum: 10c0/8ea1dcf5915c56273a3d8efa48219dbb4ed1bbe014198e1e9d891cf5ec138ec3e0a6e260c5b9b7d1a4dacda892c876e329005e6f6330631ed0f4cf03d7849abe
   languageName: node
   linkType: hard
 
@@ -3246,7 +3265,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.4, prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -3271,20 +3290,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^16.6.0":
-  version: 16.14.0
-  resolution: "react-dom@npm:16.14.0"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-    object-assign: "npm:^4.1.1"
-    prop-types: "npm:^15.6.2"
-    scheduler: "npm:^0.19.1"
-  peerDependencies:
-    react: ^16.14.0
-  checksum: 10c0/ca146e780631672a2d57c8d77775d38f394a6cd67db30c6af7964d0b3574ef7edccb1de8d592e990b98f4f5f8d1c8460b0691f04e7a45799962a51dcbaaa1371
-  languageName: node
-  linkType: hard
-
 "react-dom@npm:^18":
   version: 18.3.1
   resolution: "react-dom@npm:18.3.1"
@@ -3301,17 +3306,6 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 10c0/33977da7a5f1a287936a0c85639fec6ca74f4f15ef1e59a6bc20338fc73dc69555381e211f7a3529b8150a1f71e4225525b41b60b52965bda53ce7d47377ada1
-  languageName: node
-  linkType: hard
-
-"react@npm:^16.6.0":
-  version: 16.14.0
-  resolution: "react@npm:16.14.0"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-    object-assign: "npm:^4.1.1"
-    prop-types: "npm:^15.6.2"
-  checksum: 10c0/df8faae43e01387013900e8f8fb3c4ce9935b7edbcbaa77e12999c913eb958000a0a8750bf9a0886dae0ad768dd4a4ee983752d5bade8d840adbe0ce890a2438
   languageName: node
   linkType: hard
 
@@ -3354,6 +3348,13 @@ __metadata:
     globalthis: "npm:^1.0.3"
     which-builtin-type: "npm:^1.1.3"
   checksum: 10c0/baf4ef8ee6ff341600f4720b251cf5a6cb552d6a6ab0fdc036988c451bf16f920e5feb0d46bd4f530a5cce568f1f7aca2d77447ca798920749cfc52783c39b55
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.13.4":
+  version: 0.13.11
+  resolution: "regenerator-runtime@npm:0.13.11"
+  checksum: 10c0/12b069dc774001fbb0014f6a28f11c09ebfe3c0d984d88c9bced77fdb6fedbacbca434d24da9ae9371bfbf23f754869307fb51a4c98a8b8b18e5ef748677ca24
   languageName: node
   linkType: hard
 
@@ -3485,16 +3486,6 @@ __metadata:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: 10c0/7e3c8b2e88a1841c9671094bbaeebd94448111dd90a81a1f606f3f67708a6ec57763b3b47f06da09fc6054193e0e6709e77325415dc8422b04497a8070fa02d4
-  languageName: node
-  linkType: hard
-
-"scheduler@npm:^0.19.1":
-  version: 0.19.1
-  resolution: "scheduler@npm:0.19.1"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-    object-assign: "npm:^4.1.1"
-  checksum: 10c0/9658932a73148a93d791c064b331d9690ddfecc4de25bcd6c9b89f5f1166e3d23d9c31c1595d66565e5ffbb34d47035cb14841aba6444bc266bfcd215cefe9c0
   languageName: node
   linkType: hard
 
