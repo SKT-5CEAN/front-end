@@ -2,16 +2,25 @@
 import { HeaderMenu, useHeaderStore } from "@/store/useHeaderStore";
 import Image from "next/image";
 import logo from "../../../public/logo1.png";
-import my from "../../../public/ic-my.png";
+import { useUserStore } from "@/store/useUserStore";
 
-function Header({ onLogoClick, onLoginClick }: { onLogoClick: () => void, onLoginClick: () => void }) {
+function Header() {
   const { selectedMenu, setSelectedMenu } = useHeaderStore();
+  const { setAccessTkn } = useUserStore();
 
   const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
     const text = e.currentTarget.innerText as HeaderMenu;
     setSelectedMenu(text);
     console.log(text);
     // 추후 페이지 link 추가
+  };
+
+  const handleLogoClick = () => {
+    setAccessTkn(""); // 토큰 세팅 로직 추가 예정
+  };
+
+  const handleLoginClick = () => {
+    setAccessTkn("토큰"); // 토큰 세팅 로직 추가 예정
   };
 
   const menuItems: HeaderMenu[] = [
@@ -24,10 +33,7 @@ function Header({ onLogoClick, onLoginClick }: { onLogoClick: () => void, onLogi
 
   return (
     <header className="fixed top-0 left-0 w-full h-[60px] flex justify-between items-center px-16 bg-white z-50">
-      <button
-        className="flex items-center"
-        onClick={onLogoClick}
-      >
+      <button className="flex items-center" onClick={handleLogoClick}>
         <Image src={logo} alt="취얼업 로고" className="w-[83.25px] h-[45px]" />
       </button>
       <ul className="flex space-x-28">
@@ -46,7 +52,7 @@ function Header({ onLogoClick, onLoginClick }: { onLogoClick: () => void, onLogi
       <div>
         <button
           className="border-[2px] border-[#FFE74C] text-[#F5A524] font-bold py-2 px-4 rounded-[8px]"
-          onClick={onLoginClick}  // 로그인 버튼 클릭 핸들러
+          onClick={handleLoginClick} // 로그인 버튼 클릭 핸들러
         >
           로그인 / 회원가입
         </button>
