@@ -3,15 +3,18 @@ import { HeaderMenu, useHeaderStore } from "@/store/useHeaderStore";
 import Image from "next/image";
 import logo from "../../../public/logo1.png";
 import { useUserStore } from "@/store/useUserStore";
+import { useRouter } from "next/navigation";
+import { HEADER_LINK } from "@/constants/headerLink";
 
 function Header() {
   const { selectedMenu, setSelectedMenu } = useHeaderStore();
   const { setAccessTkn } = useUserStore();
+  const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
     const text = e.currentTarget.innerText as HeaderMenu;
     setSelectedMenu(text);
-    console.log(text);
+    router.push(`${HEADER_LINK[text]}`);
     // 추후 페이지 link 추가
   };
 
