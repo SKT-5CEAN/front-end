@@ -24,7 +24,6 @@ export default function Home() {
   return (
     <QueryClientProvider client={queryClient}>
       <div>
-        <Header />
         {accessTkn ? (
           <LoginComponent />
         ) : (
