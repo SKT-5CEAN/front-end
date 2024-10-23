@@ -1,6 +1,6 @@
 "use client";
-
 import TitleList from "@/components/TitleList/TitleList";
+import { SESSION_STORAGE_KEY } from "@/constants/sessionKey";
 import { useCompanyStore } from "@/store/useCompanyStore";
 import { useEffect } from "react";
 
@@ -9,6 +9,7 @@ function CompanyList() {
     useCompanyStore();
 
   useEffect(() => {
+    // 추후 api 나오면 react-query 로직으로 교체
     setInProgress([
       "a",
       "b",
@@ -29,8 +30,16 @@ function CompanyList() {
 
   return (
     <div className="flex flex-col justify-between">
-      <TitleList title="지원 중인 기업" list={inProgressList} />
-      <TitleList title="지원 완료 기업" list={completedList} />
+      <TitleList
+        title="지원 중인 기업"
+        list={inProgressList}
+        storageKey={SESSION_STORAGE_KEY.inProgressCompany}
+      />
+      <TitleList
+        title="지원 완료 기업"
+        list={completedList}
+        storageKey={SESSION_STORAGE_KEY.completedCompany}
+      />
     </div>
   );
 }
