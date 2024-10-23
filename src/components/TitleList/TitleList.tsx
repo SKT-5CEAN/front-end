@@ -1,12 +1,15 @@
 "use client";
-import { useState } from "react";
 import { TitleListProps } from "./titleList.type";
 import { useRouter } from "next/navigation";
+import useSessionState from "@/hook/useSessionState";
 
 function TitleList(props: TitleListProps) {
-  const { title, list } = props;
+  const { title, list, storageKey } = props;
   const router = useRouter();
-  const [selected, setSelected] = useState("");
+  const { state: selected, setState: setSelected } = useSessionState(
+    storageKey,
+    ""
+  );
 
   return (
     <div className="w-64 h-96 border-4 flex flex-col py-6 px-8">
