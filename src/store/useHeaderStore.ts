@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 export type HeaderMenu =
+  | "홈"
   | "캘린더"
   | "지원 준비"
   | "보관함"
@@ -13,7 +14,7 @@ interface HeaderStoreType {
 }
 
 export const useHeaderStore = create<HeaderStoreType>((set) => ({
-  selectedMenu: "캘린더",
+  selectedMenu: "홈",
   setSelectedMenu: (menu) => {
     set(() => ({ selectedMenu: menu }));
   },
