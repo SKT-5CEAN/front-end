@@ -2,15 +2,20 @@ import { useEffect, useState } from "react";
 
 function useSessionState(key: string, defaultValue: string) {
   const [state, setState] = useState(() => {
-    const storedValue = sessionStorage.getItem(key);
-    return storedValue !== null ? JSON.parse(storedValue) : defaultValue;
+    if (typeof window !== "undefined") {
+      const storedValue = sessionStorage.getItem(key);
+      return storedValue !== null ? JSON.parse(storedValue) : defaultValue;
+    }
+    return defaultValue;
   });
 
   useEffect(() => {
-    sessionStorage.setItem(key, JSON.stringify(state));
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem(key, JSON.stringify(state));
+    }
   }, [key, state]);
 
-  return [state, setState];
+  return { state, setState };
 }
 
 export default useSessionState;
