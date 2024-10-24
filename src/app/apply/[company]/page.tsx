@@ -5,15 +5,15 @@ function ApplyCompanyPage() {
   const tabList = [
     {
       triggerName: "기업 조사",
-      contentNode: <div></div>,
+      contentNode: <div>기업 조사</div>,
     },
     {
       triggerName: "서류 준비",
-      contentNode: <div></div>,
+      contentNode: <div>서류 준비</div>,
     },
     {
       triggerName: "면접 준비",
-      contentNode: <div></div>,
+      contentNode: <div>면접 준비</div>,
     },
   ];
 

@@ -5,11 +5,11 @@ function Tab(props: TabProps) {
   const { tabList } = props;
 
   return (
-    <Root className="w-[35rem] border border-red-300" defaultValue="tab1">
+    <Root className="h-full" defaultValue={tabList[0].triggerName}>
       <List className="flex border border-blue-300">
         {tabList.map((el) => (
           <Trigger
-            className="grow border border-r-black-200 data-[state=active]:font-bold data-[state=active]:border-b-black"
+            className="w-[20rem] h-[3.125rem] grow border border-r-black-200 data-[state=active]:font-bold data-[state=active]:border-b-black text-2xl"
             key={el.triggerName}
             value={el.triggerName}
           >
@@ -18,7 +18,7 @@ function Tab(props: TabProps) {
         ))}
       </List>
       {tabList.map((el) => (
-        <Content key={el.triggerName} value={el.triggerName}>
+        <Content className="h-full" key={el.triggerName} value={el.triggerName}>
           {el.contentNode}
         </Content>
       ))}
