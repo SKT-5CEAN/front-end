@@ -1,6 +1,8 @@
 export interface ShortFormProps {
   name: string;
   title: string;
+  trigger: boolean;
   placeholder?: string;
-  setText: (text: string) => void;
+  content: string;
+  setContent: (text: string) => void;
 }
