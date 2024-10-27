@@ -1,11 +1,12 @@
 import CompanyList from "@/components/domain/apply/CompanyList";
+import CompanyResearch from "@/components/domain/apply/CompanyResearch/CompanyResearch";
 import Tab from "@/components/domain/apply/Tab/Tab";
 
 function ApplyCompanyPage() {
   const tabList = [
     {
       triggerName: "기업 조사",
-      contentNode: <div>기업 조사</div>,
+      contentNode: <CompanyResearch />,
     },
     {
       triggerName: "서류 준비",
