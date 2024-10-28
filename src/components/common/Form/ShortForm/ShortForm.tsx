@@ -11,9 +11,13 @@ function ShortForm(props: ShortFormProps) {
   } = props;
 
   return (
-    <div>
-      <p>{title}</p>
-      {!trigger && <p>{content}</p>}
+    <div className="min-h-24 flex flex-col gap-2">
+      <p className="text-3xl text-lime-400 font-bold">{title}</p>
+      {!trigger && (
+        <p className="text-2xl text-stone-400">
+          {content || "아직 작성된 정보가 없습니다."}
+        </p>
+      )}
       {trigger && (
         <textarea
           name={name}
