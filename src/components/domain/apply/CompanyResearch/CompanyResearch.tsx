@@ -17,6 +17,14 @@ function CompanyResearch() {
     setOther,
   } = useResearchStore();
 
+  const handleSubmit = () => {
+    // 일단 제출 로직 x (임시로 콘솔 출력만)
+    console.log(talent);
+    console.log(product);
+    console.log(news);
+    console.log(other);
+  };
+
   return (
     <div className="relative">
       <div className="absolute top-5 right-5">
@@ -45,7 +53,7 @@ function CompanyResearch() {
               text="작성 완료"
               textColor="text-white"
               bgColor="bg-black"
-              handleClick={() => {}}
+              handleClick={handleSubmit}
             />
           </div>
         )}
