@@ -1,4 +1,5 @@
 "use client";
+import PlainButton from "@/components/common/Button/PlainButton/PlainButton";
 import ShortForm from "@/components/common/Form/ShortForm/ShortForm";
 import { useResearchStore } from "@/store/useResearchStore";
 import { useState } from "react";
@@ -17,8 +18,39 @@ function CompanyResearch() {
   } = useResearchStore();
 
   return (
-    <div>
-      <div className="flex flex-col gap-5">
+    <div className="relative">
+      <div className="absolute top-5 right-5">
+        {!isModified && (
+          <PlainButton
+            text="수정하기"
+            textColor="text-black"
+            borderColor="border-black"
+            bgColor="transparent"
+            handleClick={() => {
+              setIsModified(true);
+            }}
+          />
+        )}
+        {isModified && (
+          <div className="flex gap-2">
+            <PlainButton
+              text="작성 취소"
+              textColor="text-white"
+              bgColor="bg-red-400"
+              handleClick={() => {
+                setIsModified(false);
+              }}
+            />
+            <PlainButton
+              text="작성 완료"
+              textColor="text-white"
+              bgColor="bg-black"
+              handleClick={() => {}}
+            />
+          </div>
+        )}
+      </div>
+      <div className="w-[940px] flex flex-col gap-5 absolute top-24 left-8">
         <ShortForm
           name="talent"
           title="인재상"
