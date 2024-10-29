@@ -1,5 +1,7 @@
 export interface TitleListProps {
   title: string;
   list: Array<string>;
-  storageKey: string;
+  state: string;
+  setState: (state: string) => void;
+  queryParams: string;
 }
