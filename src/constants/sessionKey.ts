@@ -1,4 +1,4 @@
 export const SESSION_STORAGE_KEY = {
-  inProgressCompany: "inProgressCompany",
-  completedCompany: "completedCompany",
+  inProgressCompany: "in-progress",
+  completedCompany: "completed",
 };
