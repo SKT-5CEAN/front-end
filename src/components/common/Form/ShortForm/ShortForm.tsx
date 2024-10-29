@@ -10,6 +10,10 @@ function ShortForm(props: ShortFormProps) {
     setContent,
   } = props;
 
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setContent(e.currentTarget.value);
+  };
+
   return (
     <div className="w-full min-h-24 flex flex-col gap-2">
       <p className="text-3xl text-lime-400 font-bold">{title}</p>
@@ -23,7 +27,7 @@ function ShortForm(props: ShortFormProps) {
           name={name}
           placeholder={placeholder}
           className="w-full min-h-28 border border-gray-400 p-3"
-          onChange={(e) => setContent(e.currentTarget.value)}
+          onChange={handleChange}
         />
       )}
     </div>
