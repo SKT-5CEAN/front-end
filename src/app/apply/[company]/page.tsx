@@ -2,7 +2,7 @@ import CompanyList from "@/components/domain/apply/CompanyList";
 import CompanyResearch from "@/components/domain/apply/CompanyResearch/CompanyResearch";
 import Tab from "@/components/domain/apply/Tab/Tab";
 
-function ApplyCompanyPage() {
+function ApplyCompanyPage({ params }: { params: { company: string } }) {
   const tabList = [
     {
       triggerName: "기업 조사",
@@ -21,7 +21,7 @@ function ApplyCompanyPage() {
   return (
     <div className="pt-32 pb-4 px-11 flex justify-between">
       <section className="flex flex-col justify-between">
-        <CompanyList />
+        <CompanyList selectedCompany={params.company} />
       </section>
       <section>
         <div className="w-[64.0625rem] h-[53.75rem] border-4">
