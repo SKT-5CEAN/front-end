@@ -1,5 +1,6 @@
 import { Root, Item, Trigger, Content } from "@radix-ui/react-accordion";
 import { AccordionProps } from "./accordion.type";
+import Image from "next/image";
 
 function Accordion(props: AccordionProps) {
   const { items, triggerFontSize } = props;
@@ -14,10 +15,21 @@ function Accordion(props: AccordionProps) {
             value={`item-${idx}`}
             disabled={el.disabled}
           >
-            <Trigger className={`text-${triggerFontSize} w-full p-4 text-left	`}>
-              {el.title}
+            <Trigger
+              className={`group flex text-${triggerFontSize} w-full p-4 text-left justify-between items-center`}
+            >
+              <p className="max-w-3xl">{el.title}</p>
+              <Image
+                className="duration-300 ease-in-out group-data-[state=open]:rotate-180"
+                src="/ic-arrow.png"
+                alt="토글 화살표"
+                width={45}
+                height={45}
+              />
             </Trigger>
-            <Content className="p-4 bg-lime-500">{el.content}</Content>
+            <Content className="h-fit overflow-hidden p-4 bg-lime-500 data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown">
+              {el.content}
+            </Content>
           </Item>
         ))}
     </Root>
