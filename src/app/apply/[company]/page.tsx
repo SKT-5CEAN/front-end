@@ -1,5 +1,6 @@
 import CompanyList from "@/components/domain/apply/CompanyList";
 import CompanyResearch from "@/components/domain/apply/CompanyResearch/CompanyResearch";
+import CompanyResume from "@/components/domain/apply/CompanyResume/CompanyResume";
 import Tab from "@/components/domain/apply/Tab/Tab";
 
 function ApplyCompanyPage({ params }: { params: { company: string } }) {
@@ -10,7 +11,7 @@ function ApplyCompanyPage({ params }: { params: { company: string } }) {
     },
     {
       triggerName: "서류 준비",
-      contentNode: <div>서류 준비</div>,
+      contentNode: <CompanyResume />,
     },
     {
       triggerName: "면접 준비",
