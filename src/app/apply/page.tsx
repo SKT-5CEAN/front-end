@@ -1,10 +1,10 @@
-import CompanyList from "@/components/domain/apply/CompanyList";
+import CompanyList from "@/components/domain/apply/CompanyList/CompanyList";
 
-function ApplyPage() {
+function ApplyPage({ params }: { params: { company: string } }) {
   return (
     <div className="pt-32 pb-4 px-11 flex justify-between">
       <section>
-        <CompanyList />
+        <CompanyList selectedCompany={params.company} />
       </section>
       <section>
         <div className="w-[64.0625rem] h-[53.75rem] border-4 whitespace-pre flex justify-center items-center">
