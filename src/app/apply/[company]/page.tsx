@@ -1,4 +1,4 @@
-import CompanyList from "@/components/domain/apply/CompanyList";
+import CompanyList from "@/components/domain/apply/CompanyList/CompanyList";
 import CompanyResearch from "@/components/domain/apply/CompanyResearch/CompanyResearch";
 import CompanyResume from "@/components/domain/apply/CompanyResume/CompanyResume";
 import Tab from "@/components/domain/apply/Tab/Tab";
