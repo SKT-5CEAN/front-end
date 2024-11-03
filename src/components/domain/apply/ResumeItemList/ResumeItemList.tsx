@@ -41,6 +41,7 @@ function ResumeItemList({
 
   const cancelEditing = () => {
     setInputResume([...resumeData, { question: "", content: "" }]); // 원래 데이터로 초기화
+    setIsModified(false);
   };
 
   const addNewResumeItem = () => {
