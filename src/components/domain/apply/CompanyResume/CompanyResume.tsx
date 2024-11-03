@@ -3,6 +3,7 @@ import Accordion from "@/components/common/Accordion/Accordion";
 import { AccordionProps } from "@/components/common/Accordion/accordion.type";
 import { ResumeStoreType, useResumeStore } from "@/store/useResumeStore";
 import { useState } from "react";
+import ResumeItemList from "../ResumeItemList/ResumeItemList";
 
 function CompanyResume() {
   const [isModified, setIsModified] = useState(false);
@@ -60,6 +61,7 @@ function CompanyResume() {
           triggerFontSize="1.625rem"
         />
       )}
+      {isModified && <ResumeItemList />}
     </div>
   );
 }
