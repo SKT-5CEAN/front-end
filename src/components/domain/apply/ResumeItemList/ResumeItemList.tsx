@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 import ResumeItem from "../ResumeItem/ResumeItem";
 import PlainButton from "@/components/common/Button/PlainButton/PlainButton";
 
-function ResumeItemList() {
+function ResumeItemList({
+  setIsModified,
+}: {
+  setIsModified: (isModified: boolean) => void;
+}) {
   const { resumeData, setResumeData } = useResumeStore();
   const [inputResume, setInputResume] = useState([
     ...resumeData,
@@ -32,6 +36,7 @@ function ResumeItemList() {
       (item) => item.question || item.content
     );
     setResumeData(filteredData);
+    setIsModified(false);
   };
 
   const cancelEditing = () => {
@@ -47,12 +52,14 @@ function ResumeItemList() {
       <div>
         <PlainButton
           text="작성 취소"
-          textColor="text-red-200"
+          textColor="text-white"
+          bgColor="bg-red-200"
           handleClick={cancelEditing}
         />
         <PlainButton
           text="작성 완료"
-          textColor="text-black-200"
+          textColor="text-white"
+          bgColor="bg-black"
           handleClick={saveResumeData}
         />
       </div>
@@ -65,8 +72,13 @@ function ResumeItemList() {
             onChange={(field, value) => handleChange(idx, field, value)}
           />
         ))}
+        <button
+          className="w-16 h-16 border-none bg-lime-400 text-4xl text-white cursor-pointer"
+          onClick={addNewResumeItem}
+        >
+          +
+        </button>
       </div>
-      <button onClick={addNewResumeItem}>+</button>
     </div>
   );
 }

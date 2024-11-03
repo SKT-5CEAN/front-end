@@ -4,6 +4,7 @@ import { AccordionProps } from "@/components/common/Accordion/accordion.type";
 import { ResumeStoreType, useResumeStore } from "@/store/useResumeStore";
 import { useState } from "react";
 import ResumeItemList from "../ResumeItemList/ResumeItemList";
+import PlainButton from "@/components/common/Button/PlainButton/PlainButton";
 
 function CompanyResume() {
   const [isModified, setIsModified] = useState(false);
@@ -56,12 +57,22 @@ function CompanyResume() {
         </div>
       )}
       {!isModified && resumeData.length > 0 && (
-        <Accordion
-          items={transformResumeDataToAccordionItems(resumeData)}
-          triggerFontSize="1.625rem"
-        />
+        <div>
+          <PlainButton
+            text="수정하기"
+            textColor="text-black"
+            borderColor="border-black"
+            handleClick={() => {
+              setIsModified(true);
+            }}
+          />
+          <Accordion
+            items={transformResumeDataToAccordionItems(resumeData)}
+            triggerFontSize="1.625rem"
+          />
+        </div>
       )}
-      {isModified && <ResumeItemList />}
+      {isModified && <ResumeItemList setIsModified={setIsModified} />}
     </div>
   );
 }
