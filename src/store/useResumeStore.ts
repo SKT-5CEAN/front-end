@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
-interface ResumeDataType {
+export interface ResumeDataType {
   question: string;
   content: string;
 }
 
-interface ResumeStoreType {
+export interface ResumeStoreType {
   resumeData: Array<ResumeDataType>;
   setResumeData: (resumes: Array<ResumeDataType>) => void;
 }
