@@ -57,15 +57,17 @@ function CompanyResume() {
         </div>
       )}
       {!isModified && resumeData.length > 0 && (
-        <div>
-          <PlainButton
-            text="수정하기"
-            textColor="text-black"
-            borderColor="border-black"
-            handleClick={() => {
-              setIsModified(true);
-            }}
-          />
+        <div className="w-full h-full">
+          <div className="w-full h-16 bg-white flex justify-end p-4">
+            <PlainButton
+              text="수정하기"
+              textColor="text-black"
+              borderColor="border-black"
+              handleClick={() => {
+                setIsModified(true);
+              }}
+            />
+          </div>
           <Accordion
             items={transformResumeDataToAccordionItems(resumeData)}
             triggerFontSize="1.625rem"

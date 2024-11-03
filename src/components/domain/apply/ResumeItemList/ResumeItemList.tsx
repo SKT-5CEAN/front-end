@@ -54,7 +54,7 @@ function ResumeItemList({
 
   return (
     <div className="w-full h-full">
-      <div>
+      <div className="w-full h-16 bg-white flex justify-end gap-2 p-4">
         <PlainButton
           text="작성 취소"
           textColor="text-white"
