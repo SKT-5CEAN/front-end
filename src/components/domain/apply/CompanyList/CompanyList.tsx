@@ -1,5 +1,5 @@
 "use client";
-import TitleList from "@/components/TitleList/TitleList";
+import TitleList from "@/components/common/TitleList/TitleList";
 import { COMPANY_KEY } from "@/constants/companyKey";
 import { useCompanyStore } from "@/store/useCompanyStore";
 import { useSearchParams } from "next/navigation";
