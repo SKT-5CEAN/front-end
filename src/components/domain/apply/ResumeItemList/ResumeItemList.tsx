@@ -31,6 +31,10 @@ function ResumeItemList({
     );
   };
 
+  const handleDelete = (idx: number) => {
+    setInputResume((prev) => prev.filter((_, i) => i !== idx));
+  };
+
   const saveResumeData = () => {
     const filteredData = inputResume.filter(
       (item) => item.question || item.content
@@ -71,6 +75,7 @@ function ResumeItemList({
             title={el.question}
             content={el.content}
             onChange={(field, value) => handleChange(idx, field, value)}
+            onDelete={() => handleDelete(idx)} // 삭제 핸들러 추가
           />
         ))}
         <button

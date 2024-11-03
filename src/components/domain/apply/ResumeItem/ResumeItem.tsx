@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ResumeItemProps } from "./resumeItem.type";
 
-function ResumeItem({ title, content, onChange }: ResumeItemProps) {
+function ResumeItem({ title, content, onChange, onDelete }: ResumeItemProps) {
   return (
     <div className="w-full flex flex-col gap-4 p-6">
       <div className="w-full flex justify-between">
@@ -12,7 +12,7 @@ function ResumeItem({ title, content, onChange }: ResumeItemProps) {
           value={title}
           onChange={(e) => onChange("question", e.target.value)}
         />
-        <button className="cursor-pointer">
+        <button className="cursor-pointer" onClick={onDelete}>
           <Image src="/trash-can.png" alt="삭제 버튼" width={40} height={40} />
         </button>
       </div>
