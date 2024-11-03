@@ -1,7 +1,6 @@
 "use client";
 import { HeaderMenu, useHeaderStore } from "@/store/useHeaderStore";
 import Image from "next/image";
-import logo from "../../../public/logo1.png";
 import { useUserStore } from "@/store/useUserStore";
 import { useRouter } from "next/navigation";
 import { HEADER_LINK } from "@/constants/headerLink";
@@ -37,7 +36,13 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 w-full h-[60px] flex justify-between items-center px-16 bg-white z-50">
       <button className="flex items-center" onClick={handleLogoClick}>
-        <Image src={logo} alt="취얼업 로고" className="w-[83.25px] h-[45px]" />
+        <Image
+          src="/logo1.png"
+          alt="취얼업 로고"
+          className="w-[83.25px] h-[45px]"
+          width={83}
+          height={45}
+        />
       </button>
       <ul className="flex space-x-28">
         {menuItems.map((menu) => (
