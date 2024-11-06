@@ -9,8 +9,10 @@ function ProgressBar(props: ProgressBarProps) {
     "" | ProgressDataType["name"]
   >("");
   const [inputProcessData, setInputProcessData] = useState(processData);
-  // 그리고 화면 나갈 때 trigger 줘서 api 전송
+  // 그리고 페이지 이동 시에 trigger 줘서 api 전송
+  // middleware 사용해 봐야 할 거 같음
 
+  /** 클릭 시에 상태 버튼 보여주고, 재클릭 시에 상태 버튼 가려주는 함수 */
   const handleClick = (name: string) => {
     if (clickedProcess === name) {
       setClickedProcess("");
@@ -23,6 +25,8 @@ function ProgressBar(props: ProgressBarProps) {
     }
   };
 
+  /** 해당 요소의 상태 외에 2가지 상태 버튼을 보여주는 함수 */
+  // 예시: 요소가 '불합격' 상태이면, 클릭 시에 '합격', '대기중' 버튼이 나타남
   const getStatusOptions = (currentStatus: ProgressDataType["status"]) => {
     const options = Object.keys(STATUS_LABEL).filter(
       (status) => status !== currentStatus
@@ -30,6 +34,7 @@ function ProgressBar(props: ProgressBarProps) {
     return options;
   };
 
+  /** 선택한 상태로 업데이트 하고, 상태 버튼 가려주는 함수 */
   const updateStatus = (name: string, status: ProgressDataType["status"]) => {
     setInputProcessData((prevData) =>
       prevData.map((item) => (item.name === name ? { ...item, status } : item))
