@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 import ReactFullPage from "@fullpage/react-fullpage";
-import FeatureSection1 from "@/components/sections/FeatureSection1";
-import IntroSection from "@/components/sections/IntroSection";
-import FeatureSection2 from "@/components/sections/FeatureSection2";
-import LoginComponent from "@/components/LoginComponent";
+import FeatureSection1 from "@/components/domain/main/sections/FeatureSection1";
+import IntroSection from "@/components/domain/main/sections/IntroSection";
+import FeatureSection2 from "@/components/domain/main/sections/FeatureSection2";
+import LoginComponent from "@/components/domain/main/LoginComponent/LoginComponent";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { useUserStore } from "@/store/useUserStore";

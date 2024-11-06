@@ -1,4 +1,4 @@
-import MainCalendar from "@/components/Calendar/MainCalendar";
+import MainCalendar from "@/components/domain/calendar/Calendar/MainCalendar";
 
 function CalendarPage() {
   return (
