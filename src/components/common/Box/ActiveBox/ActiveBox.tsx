@@ -17,7 +17,7 @@ function ActiveBox(props: ActiveBoxProps) {
             }
           : () => {}
       }
-      className={`w-[455px] h-36 ${btnActive ? "bg-amber-300" : "bg-gray-400"}`}
+      className={`w-[455px] h-36 ${btnActive ? "bg-amber-200" : "bg-gray-300"}`}
     >
       <button></button>
       <p>{boxText}</p>
