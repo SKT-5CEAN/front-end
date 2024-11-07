@@ -3,7 +3,7 @@ import { INTERVIEW_KIND } from "@/constants/interviewKind";
 
 function CompanyInterview() {
   return (
-    <div className="w-full h-full flex flex-wrap">
+    <div className="w-full h-full flex flex-wrap gap-x-12 justify-center items-center pb-14">
       {INTERVIEW_KIND.map((el, idx) => (
         <ActiveBox
           key={idx}
