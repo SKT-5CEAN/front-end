@@ -46,11 +46,11 @@ function ApplyCompanyPage({ params }: { params: { company: string } }) {
   ];
 
   return (
-    <div className="pt-32 pb-4 px-11 flex justify-between">
+    <div className="pt-32 pb-4 px-11 flex justify-between bg-neutral-100">
       <section className="flex flex-col justify-between">
         <CompanyList selectedCompany={params.company} />
       </section>
-      <section>
+      <section className="flex flex-col gap-[14px]">
         <ProgressBar processData={processList} />
         <div className="w-[64.0625rem] h-[750px] border-4">
           <Tab tabList={tabList} />

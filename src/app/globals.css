@@ -109,3 +109,7 @@ body {
     url("/public/fonts/Pretendard-Black.woff") format("woff"),
     url("/public/fonts/Pretendard-Black.woff2") format("woff2");
 }
+
+.cu-progress-btn {
+  @apply w-10 h-10 rounded-full bg-white border border-black cursor-pointer;
+}
