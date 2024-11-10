@@ -2,7 +2,7 @@ import CompanyList from "@/components/domain/apply/CompanyList/CompanyList";
 
 function ApplyPage({ params }: { params: { company: string } }) {
   return (
-    <div className="pt-32 pb-4 px-11 flex justify-between">
+    <div className="pt-32 pb-4 px-11 flex justify-between bg-neutral-100">
       <section>
         <CompanyList selectedCompany={params.company} />
       </section>
