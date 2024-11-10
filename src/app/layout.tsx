@@ -17,7 +17,7 @@ export default function RootLayout({
       <head>
         <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
       </head>
-      <body>
+      <body className="font-pre">
         <Header />
         {children}
       </body>
