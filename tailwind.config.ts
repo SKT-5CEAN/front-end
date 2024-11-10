@@ -28,6 +28,9 @@ const config: Config = {
         slideUp: "slideUp 0.3s ease-in-out",
       },
     },
+    fontFamily: {
+      pre: ["Pretendard"],
+    },
   },
   plugins: [],
 };
