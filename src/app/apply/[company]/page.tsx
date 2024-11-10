@@ -1,5 +1,6 @@
 import ProgressBar from "@/components/common/Bar/ProgressBar/ProgressBar";
 import { ProgressDataType } from "@/components/common/Bar/ProgressBar/progressBar.type";
+import CompanyInterview from "@/components/domain/apply/CompanyInterview/CompanyInterview";
 import CompanyList from "@/components/domain/apply/CompanyList/CompanyList";
 import CompanyResearch from "@/components/domain/apply/CompanyResearch/CompanyResearch";
 import CompanyResume from "@/components/domain/apply/CompanyResume/CompanyResume";
@@ -17,7 +18,7 @@ function ApplyCompanyPage({ params }: { params: { company: string } }) {
     },
     {
       triggerName: "면접 준비",
-      contentNode: <div>면접 준비</div>,
+      contentNode: <CompanyInterview />,
     },
   ];
 
