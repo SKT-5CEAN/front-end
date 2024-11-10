@@ -1,16 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProgressBarProps, ProgressDataType } from "./progressBar.type";
 import { STATUS_LABEL } from "@/constants/companyStatus";
+import { usePathname } from "next/navigation";
 
 function ProgressBar(props: ProgressBarProps) {
+  const pathname = usePathname();
   const { processData } = props;
   const [clickedProcess, setClickedProcess] = useState<
     "" | ProgressDataType["name"]
   >("");
   const [inputProcessData, setInputProcessData] = useState(processData);
+  const [companyName, setCompanyName] = useState("");
   // 그리고 페이지 이동 시에 trigger 줘서 api 전송
   // middleware 사용해 봐야 할 거 같음
+
+  useEffect(function setCompany() {
+    setCompanyName(extractSegment(pathname));
+  }, []);
 
   /** 클릭 시에 상태 버튼 보여주고, 재클릭 시에 상태 버튼 가려주는 함수 */
   const handleClick = (name: string) => {
@@ -42,9 +49,15 @@ function ProgressBar(props: ProgressBarProps) {
     setClickedProcess("");
   };
 
+  /** 경로에서 기업명 가져오는 함수 */
+  const extractSegment = (url: string): string => {
+    const match = url.match(/\/apply\/([^/]+)/);
+    return match ? match[1] : "";
+  };
+
   return (
     <div className="relative w-full h-[183px] bg-[url('/progress-gradient.png')] bg-cover rounded-xl flex items-center p-10 justify-between drop-shadow-md border border-neutral-200">
-      <p className="absolute font-bold text-4xl">기업명</p>
+      <p className="absolute font-bold text-4xl">{companyName}</p>
       <div className="w-[800px] h-[72px] absolute right-10 flex justify-center items-center">
         <div className="w-[700px] h-[1px] bg-black absolute"></div>
         <div className="w-[750px] h-20 flex justify-between absolute">
