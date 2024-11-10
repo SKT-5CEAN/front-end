@@ -26,39 +26,43 @@ function CompanyResearch() {
   };
 
   return (
-    <div className="relative">
-      <div className="absolute top-5 right-5">
+    <div className="relative w-full h-full">
+      <div className="relative w-full min-h-[52px] mt-6">
         {!isModified && (
-          <PlainButton
-            text="수정하기"
-            textColor="text-black"
-            borderColor="border-black"
-            bgColor="transparent"
-            handleClick={() => {
-              setIsModified(true);
-            }}
-          />
+          <div className="absolute top-0 right-2">
+            <PlainButton
+              text="수정하기"
+              textColor="text-blue-500"
+              borderColor="border-blue-500"
+              bgColor="transparent"
+              iconImg="/ic-pencil.png"
+              handleClick={() => {
+                setIsModified(true);
+              }}
+            />
+          </div>
         )}
         {isModified && (
-          <div className="flex gap-2">
+          <div className="w-fit h-[52px] flex gap-2 absolute top-0 right-2 mt-0">
             <PlainButton
-              text="작성 취소"
-              textColor="text-white"
-              bgColor="bg-red-400"
+              text="취소"
+              textColor="text-blue-500"
               handleClick={() => {
                 setIsModified(false);
               }}
             />
             <PlainButton
-              text="작성 완료"
-              textColor="text-white"
-              bgColor="bg-black"
+              text="저장하기"
+              textColor="text-blue-800"
+              bgColor="bg-blue-100"
               handleClick={handleSubmit}
             />
           </div>
         )}
       </div>
-      <div className="w-[940px] flex flex-col gap-5 absolute top-24 left-8">
+      <div
+        className={`w-[940px] h-full flex flex-col ${isModified ? "gap-16" : "gap-12"} mt-[50px]`}
+      >
         <ShortForm
           name="talent"
           title="인재상"
