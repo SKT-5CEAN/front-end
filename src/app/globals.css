@@ -6,6 +6,8 @@
   --background: #ffffff;
   --foreground: #171717;
   --yellow-main: #ffe74c;
+  --yellow-200: #fff6c4;
+  --yellow-100: #fff4ad;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -106,4 +108,8 @@ body {
     local("Pretendard Black"),
     url("/public/fonts/Pretendard-Black.woff") format("woff"),
     url("/public/fonts/Pretendard-Black.woff2") format("woff2");
+}
+
+.cu-progress-btn {
+  @apply w-10 h-10 rounded-full bg-white border border-black cursor-pointer;
 }

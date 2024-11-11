@@ -15,18 +15,18 @@ function ShortForm(props: ShortFormProps) {
   };
 
   return (
-    <div className="w-full min-h-24 flex flex-col gap-2">
-      <p className="text-3xl text-lime-400 font-bold">{title}</p>
+    <div className="w-full min-h-24 h-full flex flex-col gap-6">
+      <p className="text-3xl text-lime-500 font-bold">{title}</p>
       {!trigger && (
-        <p className="text-2xl text-stone-400">
-          {content || "아직 작성된 정보가 없습니다."}
+        <p className="text-2xl text-stone-400 pl-5">
+          {content || "내용을 입력해 주세요."}
         </p>
       )}
       {trigger && (
         <textarea
           name={name}
           placeholder={placeholder}
-          className="w-full min-h-28 border border-gray-400 p-3"
+          className="w-full min-h-28 border border-gray-200 p-3 rounded-xl focus:outline-blue-500"
           onChange={handleChange}
         />
       )}

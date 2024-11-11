@@ -3,5 +3,6 @@ export interface PlainButtonProps {
   textColor: string;
   borderColor?: string;
   bgColor?: string;
+  iconImg?: string;
   handleClick: () => void;
 }
