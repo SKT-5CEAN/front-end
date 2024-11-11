@@ -29,7 +29,7 @@ function CompanyResearch() {
     <div className="relative w-full h-full">
       <div className="relative w-full min-h-[52px] mt-6">
         {!isModified && (
-          <div className="absolute top-0 right-2">
+          <div className="absolute top-0 right-4">
             <PlainButton
               text="수정하기"
               textColor="text-blue-500"

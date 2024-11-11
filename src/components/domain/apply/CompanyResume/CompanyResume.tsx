@@ -71,7 +71,7 @@ function CompanyResume() {
       )}
       {!isModified && resumeData.length > 0 && (
         <div className="w-full h-full">
-          <div className="w-full h-16 bg-white flex justify-end p-4">
+          <div className="w-full h-16 bg-white flex justify-end p-4 mt-2">
             <PlainButton
               text="수정하기"
               textColor="text-blue-500"
