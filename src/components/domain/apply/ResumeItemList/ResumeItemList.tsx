@@ -12,18 +12,7 @@ function ResumeItemList({
   /** 사용자가 입력하는 resume 데이터 */
   // 실제 DB에 있는 resume과 차이가 있을 수 있으므로 별개의 상태로 관리
   // '작성 완료'를 눌러야지만 이 데이터가 서버로 반영되도록 처리
-  const [inputResume, setInputResume] = useState([
-    ...resumeData,
-    { question: "", content: "" },
-  ]);
-
-  /** 사용자 입력을 받을 수 있는 비어 있는 폼은 맨 아래 최소 1개씩은 존재해야 함 */
-  useEffect(
-    function addEmptyForm() {
-      setInputResume([...resumeData, { question: "", content: "" }]);
-    },
-    [resumeData]
-  );
+  const [inputResume, setInputResume] = useState([...resumeData]);
 
   /** ResumeItem에서 자소서 문항 '제목'과 '내용'을 업데이트 할 수 있게 하려고 만든 함수 */
   const handleChange = (
@@ -66,19 +55,19 @@ function ResumeItemList({
     <div className="w-full h-full">
       <div className="w-full h-16 bg-white flex justify-end gap-2 p-4">
         <PlainButton
-          text="작성 취소"
-          textColor="text-white"
-          bgColor="bg-red-200"
+          text="취소"
+          textColor="text-blue-500"
           handleClick={cancelEditing}
         />
         <PlainButton
-          text="작성 완료"
-          textColor="text-white"
-          bgColor="bg-black"
+          text="저장하기"
+          textColor="text-blue-800"
+          bgColor="bg-blue-100"
           handleClick={saveResumeData}
         />
       </div>
-      <div className="w-full h-5/6 overflow-y-scroll">
+      <div className="w-full h-5/6 overflow-y-scroll flex flex-col justify-center mt-5">
+        <p className="text-lime-500 text-3xl ml-6">자기소개서</p>
         {inputResume.map((el, idx) => (
           <ResumeItem
             key={idx}
@@ -89,10 +78,10 @@ function ResumeItemList({
           />
         ))}
         <button
-          className="w-16 h-16 border-none bg-lime-400 text-4xl text-white cursor-pointer"
+          className="w-[1004px] h-16 px-5 rounded-lg border-none text-xl text-left bg-slate-50 mx-auto border-slate-200 text-gray-800 cursor-pointer mt-4"
           onClick={addNewResumeItem}
         >
-          +
+          +&nbsp;&nbsp;&nbsp;&nbsp;자기소개서 문항 추가하기
         </button>
       </div>
     </div>
