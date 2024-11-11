@@ -49,7 +49,7 @@ function TitleList(props: TitleListProps) {
         </ul>
       )}
       {listType === COMPANY_KEY.inProgressCompany && (
-        <button className="absolute bottom-2 w-[246px] h-[27px] font-semibold text-neutral-600 rounded-[30px] bg-lightYellow cursor-pointer">
+        <button className="absolute bottom-2 w-[246px] h-[27px] font-semibold text-neutral-600 rounded-[30px] bg-lightYellow cursor-pointer text-xs">
           + 기업 추가
         </button>
       )}

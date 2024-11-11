@@ -1,5 +1,5 @@
 import { ResumeDataType, useResumeStore } from "@/store/useResumeStore";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ResumeItem from "../ResumeItem/ResumeItem";
 import PlainButton from "@/components/common/Button/PlainButton/PlainButton";
 
@@ -42,7 +42,7 @@ function ResumeItemList({
 
   /** '작성 취소' 눌렀을 때 데이터 초기화 */
   const cancelEditing = () => {
-    setInputResume([...resumeData, { question: "", content: "" }]); // 원래 데이터로 초기화
+    setInputResume([...resumeData]); // 원래 데이터로 초기화
     setIsModified(false);
   };
 
