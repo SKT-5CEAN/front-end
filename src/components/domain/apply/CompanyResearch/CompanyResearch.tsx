@@ -16,13 +16,27 @@ function CompanyResearch() {
     other,
     setOther,
   } = useResearchStore();
+  const [inputTalent, setInputTalent] = useState(talent);
+  const [inputProduct, setInputProduct] = useState(product);
+  const [inputNews, setInputNews] = useState(news);
+  const [inputOther, setInputOther] = useState(other);
+
+  const handleCancel = () => {
+    setInputTalent(talent);
+    setInputProduct(product);
+    setInputNews(news);
+    setInputOther(other);
+
+    setIsModified(false);
+  };
 
   const handleSubmit = () => {
-    // 일단 제출 로직 x (임시로 콘솔 출력만)
-    console.log(talent);
-    console.log(product);
-    console.log(news);
-    console.log(other);
+    setTalent(inputTalent);
+    setProduct(inputProduct);
+    setNews(inputNews);
+    setOther(inputOther);
+
+    setIsModified(false);
   };
 
   return (
@@ -47,9 +61,7 @@ function CompanyResearch() {
             <PlainButton
               text="취소"
               textColor="text-blue-500"
-              handleClick={() => {
-                setIsModified(false);
-              }}
+              handleClick={handleCancel}
             />
             <PlainButton
               text="저장하기"
@@ -69,7 +81,7 @@ function CompanyResearch() {
           trigger={isModified}
           placeholder="기업의 '인재상'을 적어주세요."
           content={talent}
-          setContent={setTalent}
+          setContent={setInputTalent}
         />
         <ShortForm
           name="product"
@@ -77,7 +89,7 @@ function CompanyResearch() {
           trigger={isModified}
           placeholder="기업이 다루고 있는 '제품'을 적어주세요."
           content={product}
-          setContent={setProduct}
+          setContent={setInputProduct}
         />
         <ShortForm
           name="news"
@@ -85,7 +97,7 @@ function CompanyResearch() {
           trigger={isModified}
           placeholder="기업의 '최신 소식'을 적어주세요."
           content={news}
-          setContent={setNews}
+          setContent={setInputNews}
         />
         <ShortForm
           name="other"
@@ -93,7 +105,7 @@ function CompanyResearch() {
           trigger={isModified}
           placeholder="기업의 '기타 정보'를 적어주세요."
           content={other}
-          setContent={setOther}
+          setContent={setInputOther}
         />
       </div>
     </div>

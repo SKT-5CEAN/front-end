@@ -28,6 +28,7 @@ function ShortForm(props: ShortFormProps) {
           placeholder={placeholder}
           className="w-full min-h-28 border border-gray-200 p-3 rounded-xl focus:outline-blue-500"
           onChange={handleChange}
+          defaultValue={content}
         />
       )}
     </div>
