@@ -46,7 +46,7 @@ function CompanyResume() {
     <div className="w-full h-full">
       {!isModified && resumeData.length === 0 && (
         <div className="relative w-full h-full flex flex-col justify-center items-center">
-          <div className="absolute top-6 right-2">
+          <div className="absolute top-6 right-4">
             <PlainButton
               text="수정하기"
               textColor="text-blue-500"
