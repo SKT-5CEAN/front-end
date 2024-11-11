@@ -86,7 +86,7 @@ function CompanyResume() {
           <p className="text-lime-500 text-3xl ml-6 mt-5">자기소개서</p>
           <Accordion
             items={transformResumeDataToAccordionItems(resumeData)}
-            triggerFontSize="1.625rem"
+            triggerFontSize="lg"
           />
         </div>
       )}
