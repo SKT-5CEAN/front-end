@@ -54,9 +54,10 @@ function CompanyList({ selectedCompany }: { selectedCompany: string }) {
   }, []);
 
   return (
-    <div className="flex flex-col justify-between">
+    <div className="flex flex-col gap-[39px]">
       <TitleList
         title="지원 중인 기업"
+        listType={COMPANY_KEY.inProgressCompany}
         list={inProgressList}
         state={inProgressCompany}
         setState={setInProgressCompany}
@@ -64,6 +65,7 @@ function CompanyList({ selectedCompany }: { selectedCompany: string }) {
       />
       <TitleList
         title="지원 완료 기업"
+        listType={COMPANY_KEY.completedCompany}
         list={completedList}
         state={completedCompany}
         setState={setCompletedCompany}

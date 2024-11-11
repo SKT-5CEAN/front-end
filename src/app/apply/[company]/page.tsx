@@ -1,5 +1,6 @@
 import ProgressBar from "@/components/common/Bar/ProgressBar/ProgressBar";
 import { ProgressDataType } from "@/components/common/Bar/ProgressBar/progressBar.type";
+import CompanyInterview from "@/components/domain/apply/CompanyInterview/CompanyInterview";
 import CompanyList from "@/components/domain/apply/CompanyList/CompanyList";
 import CompanyResearch from "@/components/domain/apply/CompanyResearch/CompanyResearch";
 import CompanyResume from "@/components/domain/apply/CompanyResume/CompanyResume";
@@ -17,7 +18,7 @@ function ApplyCompanyPage({ params }: { params: { company: string } }) {
     },
     {
       triggerName: "면접 준비",
-      contentNode: <div>면접 준비</div>,
+      contentNode: <CompanyInterview />,
     },
   ];
 
@@ -45,13 +46,13 @@ function ApplyCompanyPage({ params }: { params: { company: string } }) {
   ];
 
   return (
-    <div className="pt-32 pb-4 px-11 flex justify-between">
-      <section className="flex flex-col justify-between">
+    <div className="h-full pt-32 pb-4 px-11 flex justify-between bg-neutral-100">
+      <section className="h-full flex flex-col">
         <CompanyList selectedCompany={params.company} />
       </section>
-      <section>
+      <section className="min-h-[990px] h-full flex flex-col gap-[14px]">
         <ProgressBar processData={processList} />
-        <div className="w-[64.0625rem] h-[750px] border-4">
+        <div className="w-[1114px] min-h-[750px] border-4 flex justify-center rounded-2xl px-10 py-5 bg-white">
           <Tab tabList={tabList} />
         </div>
       </section>

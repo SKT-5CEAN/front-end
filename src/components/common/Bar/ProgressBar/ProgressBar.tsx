@@ -1,16 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProgressBarProps, ProgressDataType } from "./progressBar.type";
 import { STATUS_LABEL } from "@/constants/companyStatus";
+import { usePathname } from "next/navigation";
 
 function ProgressBar(props: ProgressBarProps) {
+  const pathname = usePathname();
   const { processData } = props;
   const [clickedProcess, setClickedProcess] = useState<
     "" | ProgressDataType["name"]
   >("");
   const [inputProcessData, setInputProcessData] = useState(processData);
+  const [companyName, setCompanyName] = useState("");
   // 그리고 페이지 이동 시에 trigger 줘서 api 전송
   // middleware 사용해 봐야 할 거 같음
+
+  useEffect(function setCompany() {
+    setCompanyName(extractSegment(pathname));
+  }, []);
 
   /** 클릭 시에 상태 버튼 보여주고, 재클릭 시에 상태 버튼 가려주는 함수 */
   const handleClick = (name: string) => {
@@ -42,40 +49,47 @@ function ProgressBar(props: ProgressBarProps) {
     setClickedProcess("");
   };
 
+  /** 경로에서 기업명 가져오는 함수 */
+  const extractSegment = (url: string): string => {
+    const match = url.match(/\/apply\/([^/]+)/);
+    return match ? match[1] : "";
+  };
+
   return (
-    <div className="w-full h-[106px] bg-gray-200 rounded-xl flex justify-center items-center relative">
-      <div className="w-[920px] h-[1px] bg-black absolute"></div>
-      <div className="w-[970px] h-20 flex absolute justify-between">
-        {inputProcessData.length > 0 &&
-          inputProcessData.map((el, idx) => (
-            <div
-              key={idx}
-              className="h-18 flex flex-col justify-end items-center relative"
-            >
+    <div className="relative w-full h-[183px] bg-[url('/progress-gradient.png')] bg-cover rounded-xl flex items-center p-10 justify-between drop-shadow-md border border-neutral-200">
+      <p className="absolute font-bold text-4xl">{companyName}</p>
+      <div className="w-[800px] h-[72px] absolute right-10 flex justify-center items-center">
+        <div className="w-[700px] h-[1px] bg-black absolute"></div>
+        <div className="w-[750px] h-20 flex justify-between absolute">
+          {inputProcessData.length > 0 &&
+            inputProcessData.map((el, idx) => (
               <div
-                onClick={() => handleClick(el.name)}
-                className={`w-8 h-8 rounded-full ${el.status === "pass" && "bg-blue-600"} ${el.status === "fail" && "bg-red-600"} ${el.status === "pending" && "bg-gray-600"} bg-opacity-50 absolute inset-1/2 -translate-x-1/2 -translate-y-1/2`}
-              ></div>
-              <div
-                onClick={() => handleClick(el.name)}
-                className="w-4 h-4 rounded-full bg-black absolute inset-1/2 -translate-x-1/2 -translate-y-1/2"
-              ></div>
-              <div>{el.name}</div>
-              {clickedProcess === el.name && (
-                <div className="absolute w-24 h-16 p-2 bg-white top-14 rounded-xl flex flex-col border border-black">
-                  {getStatusOptions(el.status).map((option) => (
-                    <button
-                      key={option}
-                      className="cursor-pointer"
-                      onClick={() => updateStatus(el.name, option)}
-                    >
-                      {STATUS_LABEL[option]}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+                key={idx}
+                className="h-18 flex flex-col justify-end items-center relative"
+              >
+                <button
+                  className="cu-progress-btn"
+                  onClick={() => handleClick(el.name)}
+                >
+                  {idx + 1}
+                </button>
+                <p>{el.name}</p>
+                {clickedProcess === el.name && (
+                  <div className="absolute w-24 h-16 p-2 bg-white top-14 rounded-xl flex flex-col border border-black">
+                    {getStatusOptions(el.status).map((option) => (
+                      <button
+                        key={option}
+                        className="cursor-pointer"
+                        onClick={() => updateStatus(el.name, option)}
+                      >
+                        {STATUS_LABEL[option]}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );

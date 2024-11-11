@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         yellow: "var(--yellow-main)",
+        plainYellow: "var(--yellow-200)",
+        lightYellow: "var(--yellow-100)",
+        orange: "#ff9000",
       },
       keyframes: {
         slideDown: {
@@ -27,6 +30,9 @@ const config: Config = {
         slideDown: "slideDown 0.3s ease-in-out",
         slideUp: "slideUp 0.3s ease-in-out",
       },
+    },
+    fontFamily: {
+      pre: ["Pretendard"],
     },
   },
   plugins: [],
