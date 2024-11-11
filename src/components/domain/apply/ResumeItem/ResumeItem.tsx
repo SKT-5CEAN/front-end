@@ -6,14 +6,19 @@ function ResumeItem({ title, content, onChange, onDelete }: ResumeItemProps) {
     <div className="w-full flex flex-col gap-4 p-6">
       <div className="w-full flex justify-between">
         <input
-          className="w-11/12 h-16 text-xl border border-gray-200 rounded-lg px-3 outline-none"
+          className="w-[959px] h-16 text-xl border border-gray-200 rounded-lg px-3 outline-none"
           type="text"
           placeholder="문항을 입력해 주세요"
           value={title}
           onChange={(e) => onChange("question", e.target.value)}
         />
         <button className="cursor-pointer" onClick={onDelete}>
-          <Image src="/trash-can.png" alt="삭제 버튼" width={40} height={40} />
+          <Image
+            src="/ic-trash-can.png"
+            alt="삭제 버튼"
+            width={30}
+            height={30}
+          />
         </button>
       </div>
       <div className="w-full">

@@ -74,13 +74,16 @@ function CompanyResume() {
           <div className="w-full h-16 bg-white flex justify-end p-4">
             <PlainButton
               text="수정하기"
-              textColor="text-black"
-              borderColor="border-black"
+              textColor="text-blue-500"
+              borderColor="border-blue-500"
+              bgColor="transparent"
+              iconImg="/ic-pencil.png"
               handleClick={() => {
                 setIsModified(true);
               }}
             />
           </div>
+          <p className="text-lime-500 text-3xl ml-6 mt-5">자기소개서</p>
           <Accordion
             items={transformResumeDataToAccordionItems(resumeData)}
             triggerFontSize="1.625rem"
