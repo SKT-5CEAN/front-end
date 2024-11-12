@@ -5,7 +5,6 @@ import { useCompanyStore } from "@/store/useCompanyStore";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
-function CompanyList({ selectedCompany }: { selectedCompany: string }) {
   const {
     inProgressList,
     setInProgress,
