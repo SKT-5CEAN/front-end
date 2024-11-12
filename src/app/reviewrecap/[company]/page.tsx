@@ -7,21 +7,23 @@ import CompanyResume from "@/components/domain/apply/CompanyResume/CompanyResume
 import Tab from "@/components/domain/apply/Tab/Tab";
 
 function ApplyCompanyPage({ params }: { params: { company: string } }) {
+  {/* contentNode 바뀌어야해요 */}
   const tabList = [
     {
-      triggerName: "기업 조사",
+      triggerName: "나의 회고",
       contentNode: <CompanyResearch />,
     },
     {
-      triggerName: "서류 준비",
+      triggerName: "나의 복기",
       contentNode: <CompanyResume />,
     },
     {
-      triggerName: "면접 준비",
+      triggerName: "북마크",
       contentNode: <CompanyInterview />,
     },
   ];
 
+  {/* 여기도 바꿀것 */}
   const processList: Array<ProgressDataType> = [
     {
       name: "서류 전형",
@@ -48,10 +50,10 @@ function ApplyCompanyPage({ params }: { params: { company: string } }) {
   return (
     <div className="h-full pt-32 pb-4 px-11 flex justify-between bg-neutral-100">
       <section className="h-full flex flex-col">
-        <CompanyList selectedCompany={params.company} basePath="/apply"/>
+        <CompanyList selectedCompany={params.company} basePath="/reviewrecap"/>
       </section>
       <section className="min-h-[990px] h-full flex flex-col gap-[14px]">
-        <ProgressBar processData={processList} basePath="/apply" />
+        <ProgressBar processData={processList} basePath="/reviewrecap"/>
         <div className="w-[1114px] min-h-[750px] border-4 flex justify-center rounded-2xl px-10 py-5 bg-white">
           <Tab tabList={tabList} />
         </div>

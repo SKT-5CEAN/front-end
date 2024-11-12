@@ -12,6 +12,7 @@ function TitleList(props: TitleListProps) {
     state: selected,
     setState: setSelected,
     queryParams,
+    basePath,
   } = props;
   const router = useRouter();
 
@@ -39,8 +40,9 @@ function TitleList(props: TitleListProps) {
               key={idx}
               className={`w-full h-[38px] text-xl px-5 py-2 leading-[22px] text-neutral-600 ${el === selected ? "font-extrabold bg-plainYellow text-orange" : ""}`}
               onClick={() => {
+                console.log(`Routing to: ${basePath}/${el}?${queryParams}`)
                 setSelected(el);
-                router.push(`/apply/${el}?${queryParams}`);
+                router.push(`${basePath}/${el}?${queryParams}`);
               }}
             >
               {el}

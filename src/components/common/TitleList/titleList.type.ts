@@ -9,4 +9,5 @@ export interface TitleListProps {
   state: string;
   setState: (state: string) => void;
   queryParams: string;
+  basePath: string;
 }
