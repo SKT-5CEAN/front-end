@@ -5,7 +5,7 @@ import { useCompanyStore } from "@/store/useCompanyStore";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
-function CompanyList({ selectedCompany, basePath }: { selectedCompany: string, basePath: string }) {
+function CompanyList({ selectedCompany }: { selectedCompany: string }) {
   const {
     inProgressList,
     setInProgress,
@@ -62,7 +62,6 @@ function CompanyList({ selectedCompany, basePath }: { selectedCompany: string, b
         state={inProgressCompany}
         setState={setInProgressCompany}
         queryParams={`state=${COMPANY_KEY.inProgressCompany}`}
-        basePath={basePath}
       />
       <TitleList
         title="지원 완료 기업"
@@ -71,7 +70,6 @@ function CompanyList({ selectedCompany, basePath }: { selectedCompany: string, b
         state={completedCompany}
         setState={setCompletedCompany}
         queryParams={`state=${COMPANY_KEY.completedCompany}`}
-        basePath={basePath}
       />
     </div>
   );

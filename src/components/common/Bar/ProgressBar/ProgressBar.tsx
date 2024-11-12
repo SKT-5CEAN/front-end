@@ -4,17 +4,20 @@ import { ProgressBarProps, ProgressDataType } from "./progressBar.type";
 import { STATUS_LABEL } from "@/constants/companyStatus";
 import { usePathname } from "next/navigation";
 
-function ProgressBar({ processData, basePath }: ProgressBarProps & { basePath: string }) {
+function ProgressBar(props: ProgressBarProps) {
   const pathname = usePathname();
+  const { processData } = props;
   const [clickedProcess, setClickedProcess] = useState<
     "" | ProgressDataType["name"]
   >("");
   const [inputProcessData, setInputProcessData] = useState(processData);
   const [companyName, setCompanyName] = useState("");
+  // 그리고 페이지 이동 시에 trigger 줘서 api 전송
+  // middleware 사용해 봐야 할 거 같음
 
   useEffect(function setCompany() {
-    setCompanyName(extractSegment(pathname, basePath));
-  }, [pathname, basePath]);
+    setCompanyName(extractSegment(pathname));
+  }, []);
 
   /** 클릭 시에 상태 버튼 보여주고, 재클릭 시에 상태 버튼 가려주는 함수 */
   const handleClick = (name: string) => {
@@ -47,9 +50,8 @@ function ProgressBar({ processData, basePath }: ProgressBarProps & { basePath: s
   };
 
   /** 경로에서 기업명 가져오는 함수 */
-  const extractSegment = (url: string, basePath: string): string => {
-    const regex = new RegExp(`${basePath}/([^/]+)`);
-    const match = url.match(regex);
+  const extractSegment = (url: string): string => {
+    const match = url.match(/\/apply\/([^/]+)/);
     return match ? match[1] : "";
   };
 
