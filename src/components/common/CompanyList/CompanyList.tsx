@@ -61,7 +61,7 @@ function CompanyList({ selectedCompany, basePath }: { selectedCompany: string, b
         list={inProgressList}
         state={inProgressCompany}
         setState={setInProgressCompany}
-        queryParams={`state=${COMPANY_KEY.inProgressCompany}`}
+        queryParams={`state=${COMPANY_KEY.inProgressCompany}&company=${selectedCompany}`}
         basePath={basePath}
       />
       <TitleList
@@ -70,7 +70,7 @@ function CompanyList({ selectedCompany, basePath }: { selectedCompany: string, b
         list={completedList}
         state={completedCompany}
         setState={setCompletedCompany}
-        queryParams={`state=${COMPANY_KEY.completedCompany}`}
+        queryParams={`state=${COMPANY_KEY.inProgressCompany}&company=${selectedCompany}`}
         basePath={basePath}
       />
     </div>
