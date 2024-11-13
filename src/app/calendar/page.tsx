@@ -18,25 +18,32 @@ function CalendarPage() {
   };
 
   return (
-    <div className="flex p-20">
-      <div className="flex-1 pr-10">
+    <div className="w-full h-full flex justify-between px-[66px] py-[124px]">
+      <div>
         <MainCalendar />
       </div>
 
-      <div className="w-80">
+      <div>
         <div className="mb-4">
           <SupporterButton handleClick={handleSupporterButtonClick} />
         </div>
 
-        <div className="mt-4 p-4 border border-yellow-300 rounded-lg bg-yellow-50">
-          <h3 className="text-xl font-semibold mb-4">9월 예정 일정</h3>
-          <ul className="space-y-2">
-            {COMPANY_AND_PROCESS.map((el, idx) => (
-              <li className="w-full" key={idx}>
-                <ProcessChip company={el.company} process={el.process} />
-              </li>
-            ))}
-          </ul>
+        <div className="flex flex-col items-center">
+          <h3 className="text-[32px] font-medium mb-4 text-zinc-600">
+            9월 예정 일정
+          </h3>
+          <div className="relative w-[484px] h-[615px] mt-4 px-[38px] py-[30px] rounded-lg bg-yellow-50 border-dashed border-[3px] border-yellow border-spacing-3 flex flex-col items-center">
+            <ul className="w-[408px] h-[384px] overflow-y-scroll space-y-2">
+              {COMPANY_AND_PROCESS.map((el, idx) => (
+                <li className="w-full" key={idx}>
+                  <ProcessChip company={el.company} process={el.process} />
+                </li>
+              ))}
+            </ul>
+            <button className="absolute bottom-[30px] w-[380px] h-16 bg-lightYellow font-medium text-[22px] text-neutral-600 rounded-[30px] cursor-pointer">
+              예정 일정 추가
+            </button>
+          </div>
         </div>
 
         {/* 모달 */}
