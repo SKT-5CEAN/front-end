@@ -8,6 +8,7 @@
   --yellow-main: #ffe74c;
   --yellow-200: #fff6c4;
   --yellow-100: #fff4ad;
+  --aqua: #a0bab0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +27,12 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .bg-radial {
+    background: radial-gradient(circle at center, #a0bab0 24%, #427662 100%);
+  }
+  .shadow-aqua {
+    box-shadow: 0 13px 26px var(--aqua);
   }
 }
 
