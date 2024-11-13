@@ -8,6 +8,7 @@
   --yellow-main: #ffe74c;
   --yellow-200: #fff6c4;
   --yellow-100: #fff4ad;
+  --aqua: #a0bab0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,6 +28,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .bg-radial {
+    background: radial-gradient(circle at center, #a0bab0 24%, #427662 100%);
+  }
+  .shadow-aqua {
+    box-shadow: 0 13px 26px var(--aqua);
+  }
 }
 
 @font-face {
@@ -34,8 +41,7 @@ body {
   font-weight: 100;
   src:
     local("Pretendard Thin"),
-    url("/public/fonts/Pretendard-Thin.woff") format("woff"),
-    url("/public/fonts/Pretendard-Thin.woff2") format("woff2");
+    url("../../public/fonts/Pretendard-Thin.woff2") format("woff2");
 }
 
 @font-face {
@@ -43,8 +49,7 @@ body {
   font-weight: 200;
   src:
     local("Pretendard ExtraLight"),
-    url("/public/fonts/Pretendard-ExtraLight.woff") format("woff"),
-    url("/public/fonts/Pretendard-ExtraLight.woff2") format("woff2");
+    url("../../public/fonts/Pretendard-ExtraLight.woff2") format("woff2");
 }
 
 @font-face {
@@ -52,8 +57,7 @@ body {
   font-weight: 300;
   src:
     local("Pretendard Light"),
-    url("/public/fonts/Pretendard-Light.woff") format("woff"),
-    url("/public/fonts/Pretendard-Light.woff2") format("woff2");
+    url("../../public/fonts/Pretendard-Light.woff2") format("woff2");
 }
 
 @font-face {
@@ -61,8 +65,7 @@ body {
   font-weight: 400;
   src:
     local("Pretendard Regular"),
-    url("/public/fonts/Pretendard-Regular.woff") format("woff"),
-    url("/public/fonts/Pretendard-Regular.woff2") format("woff2");
+    url("../../public/fonts/Pretendard-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -70,8 +73,7 @@ body {
   font-weight: 500;
   src:
     local("Pretendard Medium"),
-    url("/public/fonts/Pretendard-Medium.woff") format("woff"),
-    url("/public/fonts/Pretendard-Medium.woff2") format("woff2");
+    url("../../public/fonts/Pretendard-Medium.woff2") format("woff2");
 }
 
 @font-face {
@@ -79,8 +81,7 @@ body {
   font-weight: 600;
   src:
     local("Pretendard SemiBold"),
-    url("/public/fonts/Pretendard-SemiBold.woff") format("woff"),
-    url("/public/fonts/Pretendard-SemiBold.woff2") format("woff2");
+    url("../../public/fonts/Pretendard-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -88,8 +89,7 @@ body {
   font-weight: 700;
   src:
     local("Pretendard Bold"),
-    url("/public/fonts/Pretendard-Bold.woff") format("woff"),
-    url("/public/fonts/Pretendard-Bold.woff2") format("woff2");
+    url("../../public/fonts/Pretendard-Bold.woff2") format("woff2");
 }
 
 @font-face {
@@ -97,8 +97,7 @@ body {
   font-weight: 800;
   src:
     local("Pretendard ExtraBold"),
-    url("/public/fonts/Pretendard-ExtraBold.woff") format("woff"),
-    url("/public/fonts/Pretendard-ExtraBold.woff2") format("woff2");
+    url("../../public/fonts/Pretendard-ExtraBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -106,8 +105,7 @@ body {
   font-weight: 900;
   src:
     local("Pretendard Black"),
-    url("/public/fonts/Pretendard-Black.woff") format("woff"),
-    url("/public/fonts/Pretendard-Black.woff2") format("woff2");
+    url("../../public/fonts/Pretendard-Black.woff2") format("woff2");
 }
 
 .cu-progress-btn {
