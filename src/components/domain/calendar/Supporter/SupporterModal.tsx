@@ -39,11 +39,11 @@ function SupporterModal(props: SupporterModalProps) {
           {isSelectingDeficiencies ? (
             <div className="flex flex-col items-center">
               <div className="bg-radial rounded-full w-16 h-16 mb-4"></div>
-              <h2 className="text-4xl font-bold mb-2">나만의 서포터 만들기</h2>
-              <p className="text-center text-gray-700 mb-6">
-                서포터가 도와줬으면 하는 나의 부족한 점 3가지를 골라주세요!
+              <h2 className="text-4xl font-bold mb-5">나만의 서포터 만들기</h2>
+              <p className="text-center text-gray-700 mb-6 text-2xl whitespace-pre">
+                {`서포터가 도와줬으면 하는\n나의 부족한 점 3가지를 골라주세요!`}
               </p>
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-3 gap-4 mt-10 mb-10 p-5 border border-gray-200 rounded-lg">
                 {[
                   "결핍을 채워주는",
                   "걱정이 많은",
@@ -56,7 +56,7 @@ function SupporterModal(props: SupporterModalProps) {
                     key={deficiency}
                     className={`border p-2 rounded-lg text-gray-700 ${
                       selectedDeficiencies.includes(deficiency)
-                        ? "bg-green-200"
+                        ? "border-teal-700 text-teal-700"
                         : ""
                     }`}
                     onClick={() => handleDeficiencyClick(deficiency)}
@@ -68,9 +68,9 @@ function SupporterModal(props: SupporterModalProps) {
               <button
                 onClick={onClose}
                 disabled={!isButtonEnabled}
-                className={`px-4 py-2 rounded-lg transition ${
+                className={`w-[212px] h-12 px-4 py-2 rounded-lg transition ${
                   isButtonEnabled
-                    ? "bg-gray-800 text-white hover:bg-gray-900"
+                    ? "bg-aqua text-white"
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"
                 }`}
               >

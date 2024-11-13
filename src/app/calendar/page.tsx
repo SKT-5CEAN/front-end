@@ -28,8 +28,8 @@ function CalendarPage() {
           <SupporterButton handleClick={handleSupporterButtonClick} />
         </div>
 
-        <div className="flex flex-col items-center">
-          <h3 className="text-[32px] font-medium mb-4 text-zinc-600">
+        <div className="flex flex-col items-center mt-6">
+          <h3 className="text-[32px] font-medium text-zinc-600">
             9월 예정 일정
           </h3>
           <div className="relative w-[484px] h-[615px] mt-4 px-[38px] py-[30px] rounded-lg bg-yellow-50 border-dashed border-[3px] border-yellow border-spacing-3 flex flex-col items-center">
