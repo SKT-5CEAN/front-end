@@ -38,9 +38,9 @@ function SupporterModal(props: SupporterModalProps) {
         <div className="w-full h-full flex flex-col justify-center items-center">
           {isSelectingDeficiencies ? (
             <div className="flex flex-col items-center">
-              <div className="bg-radial rounded-full w-16 h-16 mb-4"></div>
-              <h2 className="text-4xl font-bold mb-5">나만의 서포터 만들기</h2>
-              <p className="text-center text-gray-700 mb-6 text-2xl whitespace-pre">
+              <div className="bg-radial shadow-aqua rounded-full w-16 h-16 mb-5"></div>
+              <h2 className="text-4xl font-bold mb-4">나만의 서포터 만들기</h2>
+              <p className="text-center text-gray-700 mb-2 text-2xl whitespace-pre">
                 {`서포터가 도와줬으면 하는\n나의 부족한 점 3가지를 골라주세요!`}
               </p>
               <div className="grid grid-cols-3 gap-4 mt-10 mb-10 p-5 border border-gray-200 rounded-lg">
