@@ -2,16 +2,16 @@ import ProgressBar from "@/components/common/Bar/ProgressBar/ProgressBar";
 import { ProgressDataType } from "@/components/common/Bar/ProgressBar/progressBar.type";
 import CompanyInterview from "@/components/domain/apply/CompanyInterview/CompanyInterview";
 import CompanyList from "@/components/common/CompanyList/CompanyList";
-import CompanyResearch from "@/components/domain/apply/CompanyResearch/CompanyResearch";
 import CompanyResume from "@/components/domain/apply/CompanyResume/CompanyResume";
 import Tab from "@/components/domain/apply/Tab/Tab";
+import MyReview from "@/components/domain/reviewrecap/MyReview/MyReview";
 
 function ApplyCompanyPage({ params }: { params: { company: string } }) {
   {/* contentNode 바뀌어야해요 */}
   const tabList = [
     {
       triggerName: "나의 회고",
-      contentNode: <CompanyResearch />,
+      contentNode: <MyReview />,
     },
     {
       triggerName: "나의 복기",
