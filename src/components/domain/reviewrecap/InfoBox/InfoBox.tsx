@@ -16,7 +16,19 @@ function InfoBox(props: InfoBoxProps) {
 
   const info = infoBoxMap[kind];
 
-  return <div className={`w-[1002px] h-[84px] ${info.bgColor}`}></div>;
+  return (
+    <div
+      className={`w-[1002px] h-[84px] flex ${info.bgColor} rounded-xl p-4 items-center gap-5`}
+    >
+      <div className={`w-10 h-10 rounded-full ${info.iconColor}`}></div>
+      <div className="tracking-wide">
+        <p className={`text-lg font-semibold ${info.titleColor}`}>
+          {info.title}
+        </p>
+        <p className={`${info.descColor}`}>{info.desc}</p>
+      </div>
+    </div>
+  );
 }
 
 export default InfoBox;
