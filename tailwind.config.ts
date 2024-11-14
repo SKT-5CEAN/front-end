@@ -36,6 +36,13 @@ const config: Config = {
       pre: ["Pretendard"],
     },
   },
+  safelist: [
+    'bg-lime-100',
+    'bg-purple-200',
+    'bg-rose-200',
+    'bg-cyan-200',
+    'bg-gray-200', // 기본 값으로 설정한 색상도 포함
+  ],
   plugins: [],
 };
 export default config;
