@@ -11,11 +11,16 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        yellow: "var(--yellow-main)",
-        plainYellow: "var(--yellow-200)",
-        lightYellow: "var(--yellow-100)",
+        yellow: "var(--main-yellow)",
+        plainYellow: "var(--plain-yellow)",
+        lightYellow: "var(--light-yellow)",
+        semiBoldYellow: "var(--semibold-yellow)",
+        regularYellow: "var(--regular-yellow)",
         orange: "#ff9000",
         aqua: "var(--aqua)",
+        plainPurple: "var(--plain-purple)",
+        semiBoldPurple: "var(--semibold-purple)",
+        regularPurple: "var(--regular-purple)",
       },
       keyframes: {
         slideDown: {
@@ -36,13 +41,25 @@ const config: Config = {
       pre: ["Pretendard"],
     },
   },
-  safelist: [
-    'bg-lime-100',
-    'bg-purple-200',
-    'bg-rose-200',
-    'bg-cyan-200',
-    'bg-gray-200', // 기본 값으로 설정한 색상도 포함
-  ],
   plugins: [],
+  safelist: [
+    "bg-teal-100",
+    "text-teal-700",
+    "text-teal-800",
+    "bg-yellow-100",
+    "text-yellow-700",
+    "text-yellow-800",
+    "bg-plainPurple",
+    "text-semiBoldPurple",
+    "text-regularPurple",
+    "bg-rounded-teal",
+    "bg-rounded-yellow",
+    "bg-rounded-purple",
+    "bg-lime-100",
+    "bg-purple-200",
+    "bg-rose-200",
+    "bg-cyan-200",
+    "bg-gray-200", // 기본 값으로 설정한 색상도 포함
+  ],
 };
 export default config;

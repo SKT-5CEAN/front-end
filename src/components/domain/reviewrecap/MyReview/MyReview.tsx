@@ -5,13 +5,23 @@ import ReviewSummary from "./ReviewSummary";
 import { useCompanyReviewStore } from "@/store/useCompanyReviewStore";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
+import InfoBox from "../InfoBox/InfoBox";
 
-const stages: string[] = ["서류", "필기", "AI 면접", "1차 면접", "2차 면접", "최종 합격"];
+const stages: string[] = [
+  "서류",
+  "필기",
+  "AI 면접",
+  "1차 면접",
+  "2차 면접",
+  "최종 합격",
+];
 
 function MyReview() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
-  const [preparationAnswer, setPreparationAnswer] = useState<string | null>(null);
+  const [preparationAnswer, setPreparationAnswer] = useState<string | null>(
+    null
+  );
   const [difficultyAnswer, setDifficultyAnswer] = useState<string | null>(null);
   const [strengthAnswer, setStrengthAnswer] = useState<string | null>(null);
   const [weaknessAnswer, setWeaknessAnswer] = useState<string | null>(null);
@@ -23,7 +33,6 @@ function MyReview() {
 
   const { addReviewData, getCompanyReviews } = useCompanyReviewStore();
   const reviewData = getCompanyReviews(companyId);
-
 
   const openModal = (stageName: string) => {
     setIsModalOpen(true);
@@ -101,7 +110,9 @@ function MyReview() {
                 <button
                   key={answer}
                   className={`border p-2 rounded-lg ${
-                    preparationAnswer === answer ? "bg-green-200" : "text-gray-700"
+                    preparationAnswer === answer
+                      ? "bg-green-200"
+                      : "text-gray-700"
                   }`}
                   onClick={() => handleAnswerSelect(answer)}
                 >
@@ -114,15 +125,15 @@ function MyReview() {
       case 2:
         return (
           <>
-            <p className="text-center text-gray-700 mb-6">
-              난이도는 어땠나요?
-            </p>
+            <p className="text-center text-gray-700 mb-6">난이도는 어땠나요?</p>
             <div className="flex gap-4">
               {["쉬웠다", "적당했다", "어려웠다"].map((answer) => (
                 <button
                   key={answer}
                   className={`border p-2 rounded-lg ${
-                    difficultyAnswer === answer ? "bg-green-200" : "text-gray-700"
+                    difficultyAnswer === answer
+                      ? "bg-green-200"
+                      : "text-gray-700"
                   }`}
                   onClick={() => handleAnswerSelect(answer)}
                 >
@@ -159,7 +170,7 @@ function MyReview() {
               onChange={(e) => setWeaknessAnswer(e.target.value)}
             />
           </>
-        )
+        );
       default:
         return null;
     }
@@ -167,6 +178,7 @@ function MyReview() {
 
   return (
     <div className="p-20">
+      <InfoBox kind="REVIEW" />
       <h2 className="text-2xl font-semibold mb-6">회고 / 복기 - {companyId}</h2>
       <div className="flex gap-4">
         {stages.map((stage, idx) => (
