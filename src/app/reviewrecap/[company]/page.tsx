@@ -5,6 +5,7 @@ import CompanyList from "@/components/common/CompanyList/CompanyList";
 import CompanyResume from "@/components/domain/apply/CompanyResume/CompanyResume";
 import Tab from "@/components/domain/apply/Tab/Tab";
 import MyReview from "@/components/domain/reviewrecap/MyReview/MyReview";
+import MyRecap from "@/components/domain/reviewrecap/MyRecap/MyRecap";
 
 function ApplyCompanyPage({ params }: { params: { company: string } }) {
   {/* contentNode 바뀌어야해요 */}
@@ -15,7 +16,7 @@ function ApplyCompanyPage({ params }: { params: { company: string } }) {
     },
     {
       triggerName: "나의 복기",
-      contentNode: <CompanyResume />,
+      contentNode: <MyRecap />,
     },
     {
       triggerName: "북마크",
