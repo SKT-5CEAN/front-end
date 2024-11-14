@@ -1,11 +1,10 @@
 import ProgressBar from "@/components/common/Bar/ProgressBar/ProgressBar";
 import { ProgressDataType } from "@/components/common/Bar/ProgressBar/progressBar.type";
-import CompanyInterview from "@/components/domain/apply/CompanyInterview/CompanyInterview";
 import CompanyList from "@/components/common/CompanyList/CompanyList";
-import CompanyResume from "@/components/domain/apply/CompanyResume/CompanyResume";
 import Tab from "@/components/domain/apply/Tab/Tab";
 import MyReview from "@/components/domain/reviewrecap/MyReview/MyReview";
 import MyRecap from "@/components/domain/reviewrecap/MyRecap/MyRecap";
+import BookMark from "@/components/domain/reviewrecap/BookMark/BookMark";
 
 function ApplyCompanyPage({ params }: { params: { company: string } }) {
   {/* contentNode 바뀌어야해요 */}
@@ -20,7 +19,7 @@ function ApplyCompanyPage({ params }: { params: { company: string } }) {
     },
     {
       triggerName: "북마크",
-      contentNode: <CompanyInterview />,
+      contentNode: <BookMark />,
     },
   ];
 
