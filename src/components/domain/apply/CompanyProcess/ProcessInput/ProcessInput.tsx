@@ -6,7 +6,7 @@ import {
 } from "@/store/useCompanyProcessStore";
 import Image from "next/image";
 
-function ProcessInput() {
+function ProcessInput({ onClose }: { onClose: () => void }) {
   const { company, processes, setProcesses } = useCompanyProcessStore();
 
   const handleClick = (el: ProcessKind) => {
@@ -18,6 +18,11 @@ function ProcessInput() {
     }
   };
 
+  const handleSubmit = () => {
+    setProcesses([...processes, "최종 발표"]);
+    onClose();
+  };
+
   return (
     <div className="flex flex-col justify-center items-center">
       <Image
@@ -26,8 +31,8 @@ function ProcessInput() {
         width={60}
         height={60}
       />
-      <h2 className="font-bold text-3xl">{company}의 채용 절차는</h2>
-      <div id="total-process" className="relative flex gap-3">
+      <h2 className="font-bold text-3xl mt-[10px]">{company}의 채용 절차는</h2>
+      <div id="total-process" className="relative flex gap-3 mt-[34px]">
         <div id="dynamic-process" className="relative flex gap-3">
           {processes.map((el, idx) => (
             <div
@@ -53,7 +58,7 @@ function ProcessInput() {
       </div>
       <div
         id="process-btn-container"
-        className="w-[775px] h-[107px] flex px-[30px] py-[10px] gap-2 flex-wrap mt-4"
+        className="w-[775px] h-[107px] flex px-[30px] py-[10px] gap-2 flex-wrap mt-[17px]"
       >
         {PROCESS_KIND_ARRAY.map((el, idx) => (
           <button
@@ -67,9 +72,12 @@ function ProcessInput() {
           </button>
         ))}
       </div>
-      <p>전형 절차를 순서대로 클릭해주세요</p>
+      <p className="mt-[17px]">전형 절차를 순서대로 클릭해주세요</p>
       <button
-        className={`w-[212px] h-12 mt-6 text-white text-lg font-bold rounded-[10px] ${processes.length > 0 ? "bg-radial cursor-pointer" : "bg-gray-400"}`}
+        className={`w-[212px] h-12 mt-[17px] text-white text-lg font-bold rounded-[10px] ${processes.length > 0 ? "bg-radial cursor-pointer" : "bg-gray-400"}`}
+        onClick={() => {
+          if (processes.length > 0) handleSubmit();
+        }}
       >
         완료
       </button>

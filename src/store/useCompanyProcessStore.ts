@@ -14,7 +14,8 @@ export type ProcessKind =
   | "AI 면접"
   | "영어 면접"
   | "PT 면접"
-  | "신체 검사";
+  | "신체 검사"
+  | "최종 발표";
 
 export interface CompanyProcessType {
   company: string;

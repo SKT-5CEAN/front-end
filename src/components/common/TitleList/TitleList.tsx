@@ -69,7 +69,11 @@ function TitleList(props: TitleListProps) {
         </button>
       )}
       {isModalOpen && (
-        <Modal title="" onClose={handleClose} content={<CompanyProcess />} />
+        <Modal
+          title=""
+          onClose={handleClose}
+          content={<CompanyProcess onClose={handleClose} />}
+        />
       )}
     </div>
   );
