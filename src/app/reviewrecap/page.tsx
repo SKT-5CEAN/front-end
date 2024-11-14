@@ -5,6 +5,9 @@ import CompanyList from "@/components/common/CompanyList/CompanyList";
 import Modal from "@/components/common/Modal/Modal";
 import CompanyProcess from "@/components/domain/apply/CompanyProcess/CompanyProcess";
 import Tab from "@/components/domain/apply/Tab/Tab";
+import BookMark from "@/components/domain/reviewrecap/BookMark/BookMark";
+import MyRecap from "@/components/domain/reviewrecap/MyRecap/MyRecap";
+import MyReview from "@/components/domain/reviewrecap/MyReview/MyReview";
 import { useState } from "react";
 
 function ReviewRecapPage({ params }: { params: { company: string } }) {
@@ -20,16 +23,16 @@ function ReviewRecapPage({ params }: { params: { company: string } }) {
 
   const tabList = [
     {
-      triggerName: "기업 조사",
-      contentNode: "",
+      triggerName: "나의 회고",
+      contentNode: <MyReview />,
     },
     {
-      triggerName: "서류 준비",
-      contentNode: "",
+      triggerName: "나의 복기",
+      contentNode: <MyRecap />,
     },
     {
-      triggerName: "면접 준비",
-      contentNode: "",
+      triggerName: "북마크",
+      contentNode: <BookMark />,
     },
   ];
 

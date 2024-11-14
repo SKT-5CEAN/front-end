@@ -5,11 +5,12 @@ import {
   useCompanyProcessStore,
 } from "@/store/useCompanyProcessStore";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 function ProcessInput({ onClose }: { onClose: () => void }) {
   const { company, processes, setProcesses } = useCompanyProcessStore();
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleClick = (el: ProcessKind) => {
     // el이 processes에 없으면 추가, 있으면 제거
@@ -21,8 +22,8 @@ function ProcessInput({ onClose }: { onClose: () => void }) {
   };
 
   const handleSubmit = () => {
-    setProcesses([...processes, "최종 발표"]);
-    router.push(`/apply/${company}`);
+    setProcesses([...processes]);
+    router.push(`${pathname}/${company}`);
     onClose();
   };
 
