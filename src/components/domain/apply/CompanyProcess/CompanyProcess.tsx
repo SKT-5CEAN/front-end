@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CompanyInput from "./CompanyInput";
+import CompanyInput from "./CompanyInput/CompanyInput";
 import ProcessInput from "./ProcessInput";
 
 function CompanyProcess() {
@@ -7,7 +7,7 @@ function CompanyProcess() {
 
   return (
     <div>
-      {step === 0 && <CompanyInput />}
+      {step === 0 && <CompanyInput step={step} setStep={setStep} />}
       {step > 0 && <ProcessInput />}
     </div>
   );
