@@ -7,5 +7,5 @@ export interface DroppedItemsType extends ProcessChipProps {
 export interface CalendarTileProps {
   date: Date;
   droppedItems: Array<DroppedItemsType>;
-  onDrop: (props: DroppedItemsType) => void;
+  onDrop: (date: Date, company: string, process: string) => void;
 }

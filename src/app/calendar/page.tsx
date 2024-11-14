@@ -6,6 +6,8 @@ import SupporterModal from "@/components/domain/calendar/Supporter/SupporterModa
 import { COMPANY_AND_PROCESS } from "@/constants/dummy/calendar/process";
 import ProcessChip from "@/components/domain/calendar/ProcessChip/ProcessChip";
 import Modal from "@/components/common/Modal/Modal";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 function CalendarPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,6 +15,21 @@ function CalendarPage() {
   const [selectedDeficiencies, setSelectedDeficiencies] = useState<string[]>(
     []
   );
+  const [processList, setProcessList] = useState(COMPANY_AND_PROCESS);
+  const [droppedItems, setDroppedItems] = useState<
+    { date: Date; company: string; process: string }[]
+  >([]);
+
+  // Chip을 드롭할 때 호출되는 함수
+  const handleDrop = (date: Date, company: string, process: string) => {
+    // 드롭된 Chip을 droppedItems에 추가하고, processList에서는 제거
+    setDroppedItems((prev) => [...prev, { date, company, process }]);
+    setProcessList((prev) =>
+      prev.filter(
+        (item) => item.company !== company || item.process !== process
+      )
+    );
+  };
 
   const handleSupporterButtonClick = () => {
     setIsModalOpen(true);
@@ -110,35 +127,36 @@ function CalendarPage() {
   );
 
   return (
-    <div className="w-full h-full flex justify-between px-[66px] py-[124px]">
-      <div>
-        <MainCalendar />
-      </div>
-
-      <div>
-        <div className="mb-4">
-          <SupporterButton handleClick={handleSupporterButtonClick} />
+    <DndProvider backend={HTML5Backend}>
+      <div className="w-full h-full flex justify-between px-[66px] py-[124px]">
+        <div>
+          <MainCalendar droppedItems={droppedItems} handleDrop={handleDrop} />
         </div>
 
-        <div className="flex flex-col items-center mt-6">
-          <h3 className="text-[32px] font-medium text-zinc-600">
-            9월 예정 일정
-          </h3>
-          <div className="relative w-[484px] h-[615px] mt-4 px-[38px] py-[30px] rounded-lg bg-yellow-50 border-dashed border-[3px] border-yellow border-spacing-3 flex flex-col items-center">
-            <ul className="w-[408px] h-[384px] overflow-y-scroll space-y-2">
-              {COMPANY_AND_PROCESS.map((el, idx) => (
-                <li className="w-full" key={idx}>
-                  <ProcessChip company={el.company} process={el.process} />
-                </li>
-              ))}
-            </ul>
-            <button className="absolute bottom-[30px] w-[380px] h-16 bg-lightYellow font-medium text-[22px] text-neutral-600 rounded-[30px] cursor-pointer">
-              예정 일정 추가
-            </button>
+        <div>
+          <div className="mb-4">
+            <SupporterButton handleClick={handleSupporterButtonClick} />
           </div>
-        </div>
 
-        {/* {isModalOpen && (
+          <div className="flex flex-col items-center mt-6">
+            <h3 className="text-[32px] font-medium text-zinc-600">
+              9월 예정 일정
+            </h3>
+            <div className="relative w-[484px] h-[615px] mt-4 px-[38px] py-[30px] rounded-lg bg-yellow-50 border-dashed border-[3px] border-yellow border-spacing-3 flex flex-col items-center">
+              <ul className="w-[408px] h-[384px] overflow-y-scroll space-y-2">
+                {processList.map((el, idx) => (
+                  <li className="w-full" key={idx}>
+                    <ProcessChip company={el.company} process={el.process} />
+                  </li>
+                ))}
+              </ul>
+              <button className="absolute bottom-[30px] w-[380px] h-16 bg-lightYellow font-medium text-[22px] text-neutral-600 rounded-[30px] cursor-pointer">
+                예정 일정 추가
+              </button>
+            </div>
+          </div>
+
+          {/* {isModalOpen && (
           <Modal
             onClose={handleCloseModal}
             title="나만의 서포터 만들기"
@@ -148,9 +166,10 @@ function CalendarPage() {
             footer={footer}
           />
         )} */}
-        {isModalOpen && <SupporterModal onClose={handleCloseModal} />}
+          {isModalOpen && <SupporterModal onClose={handleCloseModal} />}
+        </div>
       </div>
-    </div>
+    </DndProvider>
   );
 }
 

@@ -12,5 +12,5 @@ export interface DateData {
 
 export interface MainCalendarProps {
   droppedItems: Array<DroppedItemsType>;
-  handleDrop: (props: DroppedItemsType) => void;
+  handleDrop: (date: Date, company: string, process: string) => void;
 }
