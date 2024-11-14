@@ -29,13 +29,13 @@ function CalendarTile(props: CalendarTileProps) {
         const colorClass = colorMap[item.process] || "bg-gray-200";
 
         return (
-          <div key={index} className="flex gap-1 font-pre">
+          <div key={index} className="flex gap-1 font-pre pt-1">
             <p
-              className={`w-[18px] h-[18px] text-[10px] text-gray-500 rounded-full ${colorClass}`}
+              className={`w-[20px] h-[20px] text-[12px] text-center text-gray-500 rounded-full ${colorClass}`}
             >
               {item.process.slice(0, 1)}
             </p>
-            <p className="max-w-20">{item.company}</p>
+            <p className="max-w-20 text-[14px] text-center">{item.company}</p>
           </div>
         );
       })}

@@ -28,28 +28,29 @@ function Header() {
   const menuItems: HeaderMenu[] = [
     "캘린더",
     "지원 준비",
-    "보관함",
+    // "보관함",
     "회고 / 복기",
-    "통계",
+    // "통계",
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full h-[60px] flex justify-between items-center px-16 bg-white z-50">
+    <header className="fixed py-8 left-0 w-full h-[60px] flex justify-between items-center px-[120px] bg-white z-50 border-b-2">
+      <div className="flex items-center gap-20">
       <button className="flex items-center" onClick={handleLogoClick}>
         <Image
           src="/logo1.png"
           alt="취얼업 로고"
-          className="w-[83.25px] h-[45px]"
+          className="w-[100px]"
           width={83}
           height={45}
         />
       </button>
-      <ul className="flex space-x-28">
+      <ul className="flex space-x-14">
         {menuItems.map((menu) => (
           <li
             key={menu}
             onClick={handleClick}
-            className={`cursor-pointer text-xl ${
+            className={`cursor-pointer text-[20px] ${
               selectedMenu === menu ? "text-yellow" : "text-gray-500"
             }`}
           >
@@ -57,6 +58,7 @@ function Header() {
           </li>
         ))}
       </ul>
+      </div>
       <div>
         <button
           className="border-[2px] border-[#FFE74C] text-[#F5A524] font-bold py-2 px-4 rounded-[8px]"

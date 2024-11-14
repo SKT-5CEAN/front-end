@@ -48,7 +48,7 @@ function ApplyCompanyPage({ params }: { params: { company: string } }) {
   ];
 
   return (
-    <div className="h-full pt-32 pb-4 px-11 flex justify-between bg-neutral-100">
+    <div className="w-full h-full flex justify-between px-[120px] py-[124px] bg-neutral-100">
       <section className="h-full flex flex-col">
         <CompanyList selectedCompany={params.company} basePath="/reviewrecap"/>
       </section>

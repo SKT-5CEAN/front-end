@@ -60,7 +60,7 @@ function ReviewRecapPage({ params }: { params: { company: string } }) {
   ];
 
   return (
-    <div className="pt-32 pb-4 px-11 flex justify-between bg-neutral-100">
+    <div className="w-full h-full flex justify-between px-[120px] py-[124px] bg-neutral-100">
       <section>
         <CompanyList selectedCompany={params.company} basePath="/reviewrecap" />
       </section>
@@ -70,11 +70,16 @@ function ReviewRecapPage({ params }: { params: { company: string } }) {
           <Tab tabList={tabList} />
         </div>
         {!companySelected && (
-          <div className="absolute inset-0 bg-white bg-opacity-50 backdrop-blur-md flex flex-col justify-center items-center">
-            <p className="text-3xl text-center text-gray-700 mb-4">
-              기업 추가하고 작성 시작하기
-            </p>
+          <div className="absolute inset-0 bg-white bg-opacity-50 backdrop-blur-sm flex flex-col justify-center items-center">
             <button
+              onClick={() => {
+                setIsModalOpen(true);
+              }}
+              className="px-4 py-2 bg-green-500 text-white  text-lg rounded-lg hover:bg-green-600"
+            >
+              기업 추가하고 작성 시작하기
+            </button>
+            {/* <button
               // onclick 부분은 나중에 수정해야합니당
               onClick={() => {
                 setIsModalOpen(true);
@@ -82,7 +87,7 @@ function ReviewRecapPage({ params }: { params: { company: string } }) {
               className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
             >
               기업 추가
-            </button>
+            </button> */}
           </div>
         )}
       </section>

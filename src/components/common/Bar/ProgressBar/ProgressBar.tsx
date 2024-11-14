@@ -54,7 +54,7 @@ function ProgressBar({ processData, basePath }: ProgressBarProps & { basePath: s
   };
 
   return (
-    <div className="relative w-full h-[183px] bg-[url('/progress-gradient.png')] bg-cover rounded-xl flex items-center p-10 justify-between drop-shadow-md border border-neutral-200">
+    <div className="relative w-full h-[183px] bg-[url('/docs-heading.png')] bg-cover rounded-xl flex items-center p-10 justify-between drop-shadow-md border border-neutral-200">
       <p className="absolute font-bold text-4xl">{companyName}</p>
       <div className="w-[800px] h-[72px] absolute right-10 flex justify-center items-center">
         <div className="w-[700px] h-[1px] bg-black absolute"></div>

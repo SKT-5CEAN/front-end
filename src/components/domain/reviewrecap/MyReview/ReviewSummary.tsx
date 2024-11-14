@@ -12,8 +12,7 @@ interface ReviewSummaryProps {
 
 const ReviewSummary: React.FC<ReviewSummaryProps> = ({ data }) => {
   return (
-    <div className="mt-8">
-      <h2 className="text-2xl font-semibold mb-4">나의 회고 / 모아보기</h2>
+    <div className="w-full pr-20">
       <table className="w-full border border-gray-300">
         <thead>
           <tr className="bg-gray-100">
