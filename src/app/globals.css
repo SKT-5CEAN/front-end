@@ -127,5 +127,5 @@ body {
 }
 
 .custom-after::after {
-  @apply content-[''] absolute top-1/4 left-12 w-full h-px bg-black transform -translate-y-1/2;
+  @apply content-[''] absolute top-1/4 left-14 w-[30px] h-px bg-black transform -translate-y-1/2;
 }
