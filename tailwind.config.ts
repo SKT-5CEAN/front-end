@@ -16,6 +16,9 @@ const config: Config = {
         lightYellow: "var(--yellow-100)",
         orange: "#ff9000",
         aqua: "var(--aqua)",
+        plainPurple: "var(--plain-purple)",
+        semiBoldPurple: "var(--semibold-purple)",
+        regularPurple: "var(--regular-purple)",
       },
       keyframes: {
         slideDown: {

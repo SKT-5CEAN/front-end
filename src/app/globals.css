@@ -9,6 +9,9 @@
   --yellow-200: #fff6c4;
   --yellow-100: #fff4ad;
   --aqua: #a0bab0;
+  --plain-purple: #ccd0fb;
+  --semibold-purple: #14115e;
+  --regular-purple: #110f76;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,6 +33,15 @@ body {
   }
   .bg-radial {
     background: radial-gradient(circle at center, #a0bab0 24%, #427662 100%);
+  }
+  .bg-rounded-yellow {
+    background: radial-gradient(circle at center, #f8ffc3 24%, #abb42e 100%);
+  }
+  .bg-rounded-teal {
+    background: radial-gradient(circle at center, #c3efff 24%, #2e90b4 100%);
+  }
+  .bg-rounded-purple {
+    background: radial-gradient(circle at center, #cac3ff 24%, #2e37b4 100%);
   }
   .shadow-aqua {
     box-shadow: 0 13px 26px var(--aqua);
