@@ -5,9 +5,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --yellow-main: #ffe74c;
-  --yellow-200: #fff6c4;
-  --yellow-100: #fff4ad;
+  --main-yellow: #ffe74c;
+  --plain-yellow: #fff6c4;
+  --light-yellow: #fff4ad;
+  --semibold-yellow: #854d0e;
+  --regular-yellow: #a16207;
   --aqua: #a0bab0;
   --plain-purple: #ccd0fb;
   --semibold-purple: #14115e;
