@@ -125,3 +125,7 @@ body {
 .cu-progress-btn {
   @apply w-10 h-10 rounded-full bg-white border border-black cursor-pointer;
 }
+
+.custom-after::after {
+  @apply content-[''] absolute top-1/4 left-14 w-[30px] h-px bg-black transform -translate-y-1/2;
+}

@@ -3,6 +3,9 @@ import Image from "next/image";
 import { TitleListProps } from "./titleList.type";
 import { useRouter } from "next/navigation";
 import { COMPANY_KEY } from "@/constants/companyKey";
+import { useState } from "react";
+import Modal from "../Modal/Modal";
+import CompanyProcess from "@/components/domain/apply/CompanyProcess/CompanyProcess";
 
 function TitleList(props: TitleListProps) {
   const {
@@ -15,6 +18,11 @@ function TitleList(props: TitleListProps) {
     basePath,
   } = props;
   const router = useRouter();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="relative w-[274px] h-[402px] border-1 border-neutral-300 flex flex-col py-2 px-[10px] bg-white rounded-b-3xl">
@@ -40,7 +48,7 @@ function TitleList(props: TitleListProps) {
               key={idx}
               className={`w-full h-[38px] text-xl px-5 py-2 leading-[22px] text-neutral-600 ${el === selected ? "font-extrabold bg-plainYellow text-orange" : ""}`}
               onClick={() => {
-                console.log(`Routing to: ${basePath}/${el}?${queryParams}`)
+                console.log(`Routing to: ${basePath}/${el}?${queryParams}`);
                 setSelected(el);
                 router.push(`${basePath}/${el}?${queryParams}`);
               }}
@@ -51,9 +59,21 @@ function TitleList(props: TitleListProps) {
         </ul>
       )}
       {listType === COMPANY_KEY.inProgressCompany && (
-        <button className="absolute bottom-2 w-[246px] h-[27px] font-semibold text-neutral-600 rounded-[30px] bg-lightYellow cursor-pointer text-xs">
+        <button
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
+          className="absolute bottom-2 w-[246px] h-[27px] font-semibold text-neutral-600 rounded-[30px] bg-lightYellow cursor-pointer text-xs"
+        >
           + 기업 추가
         </button>
+      )}
+      {isModalOpen && (
+        <Modal
+          title=""
+          onClose={handleClose}
+          content={<CompanyProcess onClose={handleClose} />}
+        />
       )}
     </div>
   );
