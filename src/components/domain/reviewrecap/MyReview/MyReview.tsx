@@ -94,7 +94,7 @@ function MyReview() {
   };
 
   const showSummaryView = () => {
-    setIsSummaryView(true);
+    setIsSummaryView(!isSummaryView);
   };
 
   const modalContent = () => {
@@ -177,26 +177,32 @@ function MyReview() {
   };
 
   return (
-    <div className="p-20">
+    <div className="w-full h-full flex flex-wrap gap-x-12 gap-y-10 mx-5 my-10">
       <InfoBox kind="REVIEW" />
-      <h2 className="text-2xl font-semibold mb-6">회고 / 복기 - {companyId}</h2>
-      <div className="flex gap-4">
-        {stages.map((stage, idx) => (
-          <button
-            key={idx}
-            onClick={() => openModal(stage)}
-            className={`px-4 py-2 rounded-lg ${
-              reviewData.find((data) => data.stageName === stage)
-                ? "bg-green-500 text-white"
-                : "bg-blue-500 text-white"
-            }`}
-          >
-            {reviewData.find((data) => data.stageName === stage)
-              ? `${stage} 회고 완료`
-              : `${stage} 회고 시작하기`}
-          </button>
-        ))}
-      </div>
+      {!isSummaryView && (
+        <div className="grid grid-cols-3 gap-4">
+          {stages.map((stage, idx) => (
+            <div
+              key={idx}
+              className="w-[320px] h-[124px] p-4 flex justify-between items-center rounded-xl border border-gray-200"
+            >
+              <p className="font-semibold text-lg text-gray-800">{stage}</p>
+              <button
+                onClick={() => openModal(stage)}
+                className={`px-4 py-2 rounded-lg text-white ${
+                  reviewData.find((data) => data.stageName === stage)
+                    ? "bg-green-500"
+                    : "bg-blue-500"
+                }`}
+              >
+                {reviewData.find((data) => data.stageName === stage)
+                  ? "회고 완료"
+                  : "회고 시작하기"}
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
 
       <button
         onClick={showSummaryView}
@@ -245,7 +251,7 @@ function MyReview() {
           }
         />
       )}
-
+      
       {isSummaryView && <ReviewSummary data={reviewData} />}
     </div>
   );
