@@ -4,6 +4,7 @@ import { useState } from "react";
 import Modal from "@/components/common/Modal/Modal";
 import { useSearchParams } from "next/navigation";
 import { useCompanyBookmarkStore } from "@/store/useCompanyBookMarkStore";
+import InfoBox from "../InfoBox/InfoBox";
 
 const Bookmark = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,6 +39,7 @@ const Bookmark = () => {
 
   return (
     <div className="p-20">
+      <InfoBox kind="BOOKMARK" />
       <h2 className="text-2xl font-semibold mb-6">북마크 - {companyId}</h2>
       <button
         onClick={openModal}
@@ -58,7 +60,9 @@ const Bookmark = () => {
             >
               {bookmark.url}
             </a>
-            <p className={`mt-2 text-sm text-white px-2 py-1 rounded ${bookmark.tag === "회고" ? "bg-green-500" : "bg-blue-500"}`}>
+            <p
+              className={`mt-2 text-sm text-white px-2 py-1 rounded ${bookmark.tag === "회고" ? "bg-green-500" : "bg-blue-500"}`}
+            >
               {bookmark.tag}
             </p>
           </div>
