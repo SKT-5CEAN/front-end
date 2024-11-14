@@ -67,6 +67,12 @@ function ProcessInput() {
           </button>
         ))}
       </div>
+      <p>전형 절차를 순서대로 클릭해주세요</p>
+      <button
+        className={`w-[212px] h-12 mt-6 text-white text-lg font-bold rounded-[10px] ${processes.length > 0 ? "bg-radial cursor-pointer" : "bg-gray-400"}`}
+      >
+        완료
+      </button>
     </div>
   );
 }
