@@ -40,8 +40,8 @@ function CompanyResearch() {
   };
 
   return (
-    <div className="relative w-full h-full">
-      <div className="relative w-full min-h-[52px] mt-6">
+    <div className="w-full h-full flex flex-wrap gap-x-12 gap-y-10 mx-5 my-5">
+      <div className="">
         {!isModified && (
           <div className="absolute top-0 right-4">
             <PlainButton
@@ -57,7 +57,7 @@ function CompanyResearch() {
           </div>
         )}
         {isModified && (
-          <div className="w-fit h-[52px] flex gap-2 absolute top-0 right-2 mt-0">
+          <div className="w-fit h-[52px] flex gap-2 absolute top-0 right-4 mt-0">
             <PlainButton
               text="취소"
               textColor="text-blue-500"

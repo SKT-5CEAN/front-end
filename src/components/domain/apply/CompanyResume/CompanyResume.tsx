@@ -43,10 +43,10 @@ function CompanyResume() {
   };
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full flex flex-wrap gap-x-12 gap-y-10 mx-5 my-5">
       {!isModified && resumeData.length === 0 && (
         <div className="relative w-full h-full flex flex-col justify-center items-center">
-          <div className="absolute top-6 right-4">
+          <div className="absolute top-0 right-9">
             <PlainButton
               text="수정하기"
               textColor="text-blue-500"
@@ -70,7 +70,7 @@ function CompanyResume() {
         </div>
       )}
       {!isModified && resumeData.length > 0 && (
-        <div className="w-full h-full">
+        <div className="absolute top-0 right-4">
           <div className="w-full h-16 bg-white flex justify-end p-4 mt-2">
             <PlainButton
               text="수정하기"
