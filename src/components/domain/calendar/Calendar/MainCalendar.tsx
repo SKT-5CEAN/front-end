@@ -2,8 +2,11 @@
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./calendar.css";
+import CalendarTile from "../CalendarTile/CalendarTile";
+import { MainCalendarProps } from "./calendar.type";
 
-function MainCalendar() {
+function MainCalendar(props: MainCalendarProps) {
+  const { droppedItems, handleDrop } = props;
   const formatMonthYear = (locale: string | undefined, date: Date) => {
     return date.toLocaleString(locale, { month: "long" });
   };
@@ -17,6 +20,13 @@ function MainCalendar() {
       formatShortWeekday={(locale, date) =>
         date.toLocaleDateString(locale, { weekday: "long" })
       }
+      tileContent={({ date }) => (
+        <CalendarTile
+          date={date}
+          droppedItems={droppedItems}
+          onDrop={handleDrop}
+        />
+      )}
     />
   );
 }
