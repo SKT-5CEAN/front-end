@@ -12,7 +12,7 @@ export const REVIEW_INFO_BOX: InfoType = {
 export const RECAP_INFO_BOX: InfoType = {
   title: "복기해서 만드는 나만의 기출모음집",
   desc: "필기시험에 나왔던 문제와 면접에서 받았던 질문을 기록해요",
-  bgColor: "bg-teal-200",
+  bgColor: "bg-teal-100",
   titleColor: "text-teal-800",
   descColor: "text-teal-700",
   iconColor: "bg-rounded-teal",

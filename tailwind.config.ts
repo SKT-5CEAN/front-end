@@ -40,5 +40,19 @@ const config: Config = {
     },
   },
   plugins: [],
+  safelist: [
+    "bg-teal-100",
+    "text-teal-700",
+    "text-teal-800",
+    "bg-yellow-200",
+    "text-yellow-700",
+    "text-yellow-800",
+    "bg-plainPurple",
+    "text-semiBoldPurple",
+    "text-regularPurple",
+    "bg-rounded-teal",
+    "bg-rounded-yellow",
+    "bg-rounded-purple",
+  ],
 };
 export default config;
