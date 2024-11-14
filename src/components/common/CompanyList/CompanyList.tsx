@@ -36,25 +36,17 @@ function CompanyList({ selectedCompany, basePath }: { selectedCompany: string, b
   useEffect(() => {
     // 추후 api 나오면 react-query 로직으로 교체
     setInProgress([
-      "a",
-      "b",
-      "c",
-      "d",
-      "e",
-      "f",
-      "g",
-      "h",
-      "i",
-      "j",
-      "k",
-      "l",
-      "m",
+      "SKT",
+      "네이버",
+      "카카오",
+      "AWS",
+      "신한은행"
     ]);
-    setCompleted(["a", "b", "c"]);
+    setCompleted(["삼성전자", "LG전자", "KT"]);
   }, []);
 
   return (
-    <div className="flex flex-col gap-[39px]">
+    <div className="flex flex-col gap-[40px]">
       <TitleList
         title="지원 중인 기업"
         listType={COMPANY_KEY.inProgressCompany}
