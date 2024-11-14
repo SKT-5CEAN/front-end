@@ -3,7 +3,7 @@ import { InfoType } from "@/components/domain/reviewrecap/InfoBox/infoBox.type";
 export const REVIEW_INFO_BOX: InfoType = {
   title: "잊어버리기 쉬운 취준 과정, 1분 회고로 평생 기억하기",
   desc: "4단계로 빠르고 간편하게 기록해요. 저장된 회고 내역을 확인할 수 있어요.",
-  bgColor: "bg-yellow-200",
+  bgColor: "bg-yellow-100",
   titleColor: "text-yellow-800",
   descColor: "text-yellow-700",
   iconColor: "bg-rounded-yellow",
