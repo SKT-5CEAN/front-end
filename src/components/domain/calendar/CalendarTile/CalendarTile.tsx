@@ -1,6 +1,7 @@
 import { useDrop } from "react-dnd";
 import { CalendarTileProps } from "./calendarTile.type";
 import { useRef } from "react";
+import { colorMap } from "@/constants/processColor";
 
 function CalendarTile(props: CalendarTileProps) {
   const { date, droppedItems, onDrop } = props;
@@ -24,11 +25,20 @@ function CalendarTile(props: CalendarTileProps) {
 
   return (
     <div ref={divRef} className="w-full h-full">
-      {itemsForDate.map((item, index) => (
-        <div key={index} style={{ fontSize: "0.8rem", color: "darkred" }}>
-          {item.company} - {item.process}
-        </div>
-      ))}
+      {itemsForDate.map((item, index) => {
+        const colorClass = colorMap[item.process] || "bg-gray-200";
+
+        return (
+          <div key={index} className="flex gap-1 font-pre">
+            <p
+              className={`w-[18px] h-[18px] text-[10px] text-gray-500 rounded-full ${colorClass}`}
+            >
+              {item.process.slice(0, 1)}
+            </p>
+            <p className="max-w-20">{item.company}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
