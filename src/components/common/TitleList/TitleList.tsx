@@ -25,7 +25,7 @@ function TitleList(props: TitleListProps) {
   };
 
   return (
-    <div className="relative w-[274px] h-[402px] border-1 border-neutral-300 flex flex-col py-2 px-[10px] bg-white rounded-b-3xl">
+    <div className="relative w-[300px] h-[402px] border-1 border-neutral-300 flex flex-col py-2 px-[10px] bg-white rounded-b-3xl">
       <div className="w-full h-[42px] flex gap-3 items-center px-1">
         <Image
           src={
@@ -38,11 +38,11 @@ function TitleList(props: TitleListProps) {
           height={18}
           style={{ width: "18px", height: "18px" }}
         />
-        <h2 className="text-base">{title}</h2>
+        <h2 className="text-lg">{title}</h2>
       </div>
       <hr className="mt-2" />
       {list.length > 0 && (
-        <ul className="w-[246px] h-[280px] overflow-y-scroll py-2">
+        <ul className="w-[280px] h-[280px] overflow-y-scroll py-2">
           {list.map((el, idx) => (
             <li
               key={idx}
@@ -63,7 +63,7 @@ function TitleList(props: TitleListProps) {
           onClick={() => {
             setIsModalOpen(true);
           }}
-          className="absolute bottom-2 w-[246px] h-[27px] font-semibold text-neutral-600 rounded-[30px] bg-lightYellow cursor-pointer text-xs"
+          className="absolute bottom-2 w-[280px] h-[40px] font-semibold text-neutral-600 rounded-[30px] bg-lightYellow cursor-pointer text-md"
         >
           + 기업 추가
         </button>
