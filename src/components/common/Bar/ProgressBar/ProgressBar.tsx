@@ -4,7 +4,10 @@ import { ProgressBarProps, ProgressDataType } from "./progressBar.type";
 import { STATUS_LABEL } from "@/constants/companyStatus";
 import { usePathname } from "next/navigation";
 
-function ProgressBar({ processData, basePath }: ProgressBarProps & { basePath: string }) {
+function ProgressBar({
+  processData,
+  basePath,
+}: ProgressBarProps & { basePath: string }) {
   const pathname = usePathname();
   const [clickedProcess, setClickedProcess] = useState<
     "" | ProgressDataType["name"]
@@ -12,9 +15,12 @@ function ProgressBar({ processData, basePath }: ProgressBarProps & { basePath: s
   const [inputProcessData, setInputProcessData] = useState(processData);
   const [companyName, setCompanyName] = useState("");
 
-  useEffect(function setCompany() {
-    setCompanyName(extractSegment(pathname, basePath));
-  }, [pathname, basePath]);
+  useEffect(
+    function setCompany() {
+      setCompanyName(extractSegment(pathname, basePath));
+    },
+    [pathname, basePath]
+  );
 
   /** 클릭 시에 상태 버튼 보여주고, 재클릭 시에 상태 버튼 가려주는 함수 */
   const handleClick = (name: string) => {
@@ -63,10 +69,10 @@ function ProgressBar({ processData, basePath }: ProgressBarProps & { basePath: s
             inputProcessData.map((el, idx) => (
               <div
                 key={idx}
-                className="h-18 flex flex-col justify-end items-center relative"
+                className={`h-18 flex flex-col justify-end items-center relative`}
               >
                 <button
-                  className="cu-progress-btn"
+                  className={`cu-progress-btn ${el.status === "pass" ? "bg-blue-200" : ""} ${el.status === "fail" ? "bg-red-200" : ""} ${el.status === "pending" ? "bg-white" : ""}`}
                   onClick={() => handleClick(el.name)}
                 >
                   {idx + 1}
